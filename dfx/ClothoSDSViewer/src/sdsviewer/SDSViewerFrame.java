@@ -27,6 +27,7 @@ import javax.swing.Icon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import newsds.algorithms.SDSGeneralAlgorithm;
 import newsds.algorithms.SDSNewAlgorithm;
@@ -67,7 +68,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
     /** Creates new form SDSViewerFrame */
     public SDSViewerFrame() {
         initComponents();
-        
+
     }
 
     /** This method is called from within the constructor to
@@ -119,7 +120,11 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         btnLoad = new javax.swing.JToggleButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         lFiles = new javax.swing.JList();
+        jButton1 = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(SDSViewerFrame.class);
+        setTitle(resourceMap.getString("Form.title")); // NOI18N
         setName("Form"); // NOI18N
 
         mainPanel.setName("mainPanel"); // NOI18N
@@ -127,7 +132,6 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setName("jPanel1"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(SDSViewerFrame.class);
         label2.setFont(resourceMap.getFont("label2.font")); // NOI18N
         label2.setName("label2"); // NOI18N
         label2.setText(resourceMap.getString("label2.text")); // NOI18N
@@ -269,7 +273,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tpCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
+                .addComponent(tpCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -409,6 +413,14 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(lFiles);
 
+        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
+        jButton1.setName("jButton1"); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -416,7 +428,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -446,13 +458,14 @@ public class SDSViewerFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnExportImage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(btnExportImage, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(lblStats)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 305, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(tfPathToFiles, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -515,7 +528,9 @@ public class SDSViewerFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnExportImage)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3))
+                                .addComponent(jButton3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
         );
@@ -548,7 +563,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1234, Short.MAX_VALUE)
+            .addGap(0, 1241, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -597,16 +612,15 @@ public class SDSViewerFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //new Thread(new thread1()).start();         tpCanvas.removeAll();          findReqRecIntermediates();         runSDS();         runNewSDS();         runGeneralSDS();          refreshCanvas();     }//GEN-LAST:event_jButton2ActionPerformed
-       tpCanvas.removeAll();
-
+        tpCanvas.removeAll();
         findReqRecIntermediates();
         runSDS();
         runNewSDS();
         runGeneralSDS();
 
         refreshCanvas();
-    
-    
+
+
     }
         private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
 
@@ -615,6 +629,16 @@ public class SDSViewerFrame extends javax.swing.JFrame {
     private void lFilesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lFilesMouseClicked
 
         int firstSelIx = lFiles.getSelectedIndex();         if (firstSelIx > -1) {             loadFile(getPath());         }     }//GEN-LAST:event_lFilesMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+//generate/retrieve clotho composite part
+tpCanvas.removeAll();
+        runClothoSDS();
+        runGeneralSDS();
+
+        refreshCanvas();
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private String getPath() {
         int firstSelIx = lFiles.getSelectedIndex();
@@ -753,6 +777,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
     private ArrayList<StringList> convertGps(ArrayList<CompositePart> gpsOrig) {
         ArrayList<StringList> gps = new ArrayList<StringList>();
 
+
         for (CompositePart cPart : gpsOrig) {
             StringList gp = new StringList();
             for (BasicPart bPart : cPart) {
@@ -779,6 +804,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExportImage;
     private javax.swing.JToggleButton btnLoad;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton6;
@@ -819,7 +845,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
     private javax.swing.JTabbedPane tpCanvas;
     // End of variables declaration//GEN-END:variables
 
-  public void findReqRecIntermediates() {
+    public void findReqRecIntermediates() {
         _required = new ArrayList<StringList>();
         _recommended = new ArrayList<StringList>();
 
@@ -839,7 +865,8 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             }
         }
     }
-  private void runSDS() {
+
+    private void runSDS() {
         SDSNewAlgorithm sds = new SDSNewAlgorithm();
 
         ArrayList<StringList> gps = convertGps(_goalParts);
@@ -917,10 +944,35 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         stat.setGoalParts(_goalParts.size());
         _statistics.put(this.GENERAL_SDS_TITLE, stat);
     }
-    
+
     public void addGraph(String title, VisualizationViewer vv) {
         GraphZoomScrollPane zoomPane = new GraphZoomScrollPane(vv);
         this.tpCanvas.addTab(title, zoomPane);
         this._vv = vv;
+    }
+
+    private void runClothoSDS() {
+        SDSNewAlgorithm sds = new SDSNewAlgorithm();
+
+        ArrayList<StringList> gps = convertGps(_goalParts);
+
+        ElapsedTime.start();
+        ArrayList<SDSBinaryTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(gps, new ArrayList<StringList>(), new ArrayList<StringList>(), new HashStringBinaryTree());
+        ElapsedTime.stop();
+
+        SDSJointBinaryForest orgJbf = sds.convertTo2ab(orgGoalPartTrees);
+        BinaryGraphViewer orgJbfViewer = new BinaryGraphViewer(orgJbf);
+        orgJbfViewer.setBackground(new Color(206, 218, 255));
+//        LayoutScalingControl scalingPlugin = new LayoutScalingControl();
+//        orgJbfViewer.getVV().scaleToLayout(scalingPlugin);
+//        scalingPlugin.scale(orgJbfViewer.getVV(), .2f, new Point(0,0));
+        this.addGraph(this.SDS_TITLE, orgJbfViewer.getVV());
+
+        Statistics stat = new Statistics();
+        stat.setExecutionTime(ElapsedTime.getTime());
+        stat.setStages(orgJbf.getNode().getStages());
+        stat.setSteps(orgJbf.getNode().getSteps());
+        stat.setGoalParts(_goalParts.size());
+        _statistics.put(this.SDS_TITLE, stat);
     }
 }

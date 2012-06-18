@@ -4,9 +4,10 @@ sdsviewer.SDSViewerFrame$14
 sdsviewer.SDSViewerFrame
 java.lang.Runnable
 ||:sdsviewer.SDSViewerFrame$13
-java.awt.event.MouseAdapter
+java.lang.Object
 sdsviewer.SDSViewerFrame$13
 sdsviewer.SDSViewerFrame
+java.lang.Runnable
 ||:sdsviewer.Statistics
 java.lang.Object
 java.text.DecimalFormat
@@ -163,7 +164,6 @@ java.lang.Integer
 java.lang.Exception
 ||:sdsviewer.SDSViewerFrame
 javax.swing.LayoutStyle$ComponentPlacement
-sdsviewer.SDSViewerFrame$14
 sdsviewer.SDSViewerFrame$13
 sdsviewer.Statistics
 sdsviewer.SDSViewerFrame$12
@@ -171,8 +171,11 @@ sdsviewer.SDSViewerFrame$11
 sdsviewer.SDSViewerFrame$10
 javax.swing.DefaultListModel
 javax.swing.GroupLayout$Group
+viewers.GraphViewer
+testability.FunctionallyTestableIntermediateFinder
 java.awt.Dimension
 java.lang.System
+newsds.algorithms.SDSGeneralAlgorithm
 java.lang.Exception
 java.lang.Integer
 java.lang.IllegalAccessException
@@ -188,6 +191,7 @@ javax.swing.BorderFactory
 java.awt.Container
 javax.swing.JFrame
 sdsviewer.SDSViewerFrame$9
+edu.uci.ics.jung.visualization.GraphZoomScrollPane
 sdsviewer.SDSViewerFrame$8
 sdsviewer.SDSViewerFrame$7
 sdsviewer.SDSViewerFrame$6
@@ -200,9 +204,11 @@ sdsviewer.SDSViewerFrame$1
 javax.swing.JTable
 javax.swing.JButton
 java.lang.Object
+viewers.BinaryGraphViewer
 javax.swing.GroupLayout$ParallelGroup
 javax.swing.UnsupportedLookAndFeelException
 java.lang.Boolean
+helper.HashStringBinaryTree
 java.util.HashMap
 helper.StringList
 java.util.logging.Logger
@@ -210,7 +216,11 @@ java.util.logging.Level
 [Ljava.io.File;
 java.io.File
 testability.IntermediateFinder
+newsds.datastructures.SDSJointBinaryForest
+newsds.algorithms.SDSNewAlgorithm
 javax.swing.UIManager$LookAndFeelInfo
+newsds.datastructures.SDSNode
+helper.HashStringTree
 accessibility.CPFReader
 javax.swing.JTabbedPane
 javax.swing.table.DefaultTableModel
@@ -219,10 +229,12 @@ newsds.datastructures.CompositePart
 javax.swing.Icon
 javax.swing.JScrollPane
 javax.swing.JSeparator
+javax.swing.JOptionPane
 accessibility.PartAttributes
 newsds.datastructures.BasicPart
 java.lang.ClassNotFoundException
 javax.swing.JPanel
+helper.ElapsedTime
 java.util.ArrayList
 javax.swing.table.JTableHeader
 java.lang.Class
@@ -230,9 +242,9 @@ java.lang.StringBuilder
 java.awt.TextArea
 [Ljavax.swing.UIManager$LookAndFeelInfo;
 javax.swing.GroupLayout$Alignment
+java.awt.Label
 org.jdesktop.application.ResourceMap
 java.awt.EventQueue
-java.awt.Label
 javax.swing.JLabel
 javax.swing.GroupLayout$SequentialGroup
 java.lang.String
@@ -240,6 +252,7 @@ java.lang.InstantiationException
 java.awt.Color
 java.awt.event.ActionEvent
 java.util.Iterator
+newsds.datastructures.SDSJointForest
 ||:helper.HashStringInteger
 helper.HashStringInteger
 java.util.HashMap
