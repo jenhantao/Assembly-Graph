@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: aati.aux
+The style file: acm.bst
+Database file #1: aati.bib
+You've used 3 entries,
+            2253 wiz_defined-function locations,
+            546 strings with 4409 characters,
+and the built_in function-call counts, 1008 in all, are:
+= -- 83
+> -- 76
+< -- 0
++ -- 32
+- -- 28
+* -- 89
+:= -- 186
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 22
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 31
+empty$ -- 62
+format.name$ -- 28
+if$ -- 191
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 4
+newline$ -- 18
+num.names$ -- 6
+pop$ -- 24
+preamble$ -- 1
+purify$ -- 20
+quote$ -- 0
+skip$ -- 16
+stack$ -- 0
+substring$ -- 16
+swap$ -- 6
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 10
+warning$ -- 0
+while$ -- 6
+width$ -- 4
+write$ -- 31

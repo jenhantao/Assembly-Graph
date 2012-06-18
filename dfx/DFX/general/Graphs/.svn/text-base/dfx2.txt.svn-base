@@ -1,0 +1,87 @@
+## Evan Appleton 2/28/12
+## Design for X graph
+
+graph DesignForX 
+	{
+	
+	node [fontsize=40,width="2.5", height="2.5", style=bold];
+	edge [len=1.0];
+	graph[overlap=false, splines=true, center];
+
+	n001 [label="Design for X", width="5", height="5", color="red", fontcolor="red"];
+	n002 [label="Assembly", width="4", height="4", color="red", fontcolor="red"];
+	n003 [label="Characterization", width="4", height="4"];
+	n004 [label="Test", width="4", height="4"];
+	n001 -- n002 [color="red"];
+	n001 -- n003;
+	n001 -- n004;
+
+	n005 [label="2 Parts", color="red", fontcolor="red"];
+	n002 -- n005 [color="red"];	
+	
+	n006 [label="Variables", color="red", fontcolor="red"];
+	n007 [label="Basic", color="red", fontcolor="red"];
+	n008 [label="Optional"];
+	n005 -- n006 [len = .6, color="red"];
+	n006 -- n007 [len = .6, color="red"];
+	n006 -- n008 [len = .6];
+	
+	n009 [label="Parts"];
+	n010 [label="Basic"];
+	n011 [label="Optional"];
+	n012 [label="Sharing"];
+	n013 [label="Share"];
+	n014 [label="Slack"];
+	n015 [label="I.R."];
+	n016 [label="Testable"];
+	n017 [label="Complete"];
+	n018 [label="Partial"];
+	n019 [label="Plasmid No."];
+	n020 [label="Single"];
+	n021 [label="Multi"];
+	n005 -- n009 [len = .6];
+	n009 -- n010 [len = .6];
+	n009 -- n011 [len = .6];
+	n011 -- n012 [len = .6];
+	n012 -- n013 [len = .6];
+	n012 -- n014 [len = .6];
+	n012 -- n015 [len = .6];
+	n011 -- n016 [len = .6];
+	n016 -- n017 [len = .6];
+	n016 -- n018 [len = .6];
+	n011 -- n019 [len = .6];
+	n019 -- n020 [len = .6];
+	n019 -- n021 [len = .6];
+	
+	n022 [label="3+ Parts"];
+	n002 -- n022;
+	
+	n023 [label="Plants"];
+	n024 [label="Goldenbraid"];
+	n022 -- n023;
+	n023 -- n024;
+
+	n025 [label="Mammal/Bacteria"];
+	n026 [label="Low Cost"];
+	n027 [label="Libraries"];
+	n034 [label="Flexibility"];
+	n035 [label="Scalability"];
+	n028 [label="Gibson"];
+	n029 [label="CPEC"];
+	n030 [label="SLIC"];
+	n031 [label="USER"];
+	n032 [label="Golden Gate"];
+	n033 [label="Mo-Clo"];
+	n022 -- n025;
+	n025 -- n026;
+	n025 -- n027;
+	n025 -- n034;
+	n025 -- n035;
+	n026 -- n029;
+	n026 -- n030;
+	n027 -- n032;
+	n027 -- n033;
+	n034 -- n031;
+	n035 -- n028;
+
+}

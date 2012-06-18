@@ -1,0 +1,493 @@
+@Article{TinkerCell,
+AUTHOR = {Chandran, Deepak and Bergmann, Frank and Sauro, Herbert},
+TITLE = {TinkerCell: modular CAD tool for synthetic biology},
+JOURNAL = {Journal of Biological Engineering},
+VOLUME = {3},
+YEAR = {2009},
+NUMBER = {1},
+PAGES = {19},
+URL = {http://www.jbioleng.org/content/3/1/19},
+DOI = {10.1186/1754-1611-3-19},
+PubMedID = {19874625},
+ISSN = {1754-1611},
+}
+
+@article{genedesign,
+  journal = {Genome Res.},
+  year = 2006,
+  month = {April},
+  volume = 16,
+  number = 4,
+  pages= {550--6},
+  title = {GeneDesign: rapid, automated design of multikilobase synthetic genes},
+  author = {SM Richardson and SJ Wheelan and RM Yarrington and JD Boeke}
+}
+
+@article{rbsCalculator,
+  author = {H. Salis and E.A. Mirsky and C.A. Voigt},
+  title = {Automated design of synthetic ribosome binding sites to control protein expression}, 
+  journal = {Nature Biotechnology},
+  volume = 27,
+  pages = {946--950},
+  year = 2009
+}
+
+@article{abelson2000amorphous,
+  title={{Amorphous computing}},
+  author={Abelson, H. and Allen, D. and Coore, D. and Hanson, C. and Homsy, G. and Knight Jr, T.F. and Nagpal, R. and Rauch, E. and Sussman, G.J. and Weiss, R.},
+  journal={Communications of the ACM},
+  volume={43},
+  number={5},
+  pages={74--82},
+  year={2000},
+  publisher={ACM}
+}
+
+@InProceedings{proto07,
+  title = {Continuous Space-Time Semantics Allow Adaptive Program Execution},
+  author = {Jonathan Bachrach and Jacob Beal and Takeshi Fujiwara},
+  booktitle = {IEEE SASO 2007},
+  month = {July},
+  year = {2007}
+}
+
+@article{basu2004spatiotemporal,
+  title={{Spatiotemporal control of gene expression with pulse-generating networks}},
+  author={Basu, S. and Mehreja, R. and Thiberge, S. and Chen, M.T. and Weiss, R.},
+  journal={Proceedings of the National Academy of Sciences of the United States of America},
+  volume={101},
+  number={17},
+  pages={6355},
+  year={2004},
+  publisher={National Acad Sciences}
+}
+
+
+@article{Hughes07,
+author = {Hughes, S. R. and Dowd, P. F. and Hector, R. E. and Riedmuller, S. B. and Bartolett, S. and Mertens, J. A. and Qureshi, N. and Liu, S. and
+Bischoff, K. M. and Li, X.-L. and Jackson, J. S. Jr. and Sterner, D. and Panavas, T. and Rich, J. O. and Farrelly, P. J. and Butt, T. R. and Cotta, M. A.},
+title = {Cost-effective high-throughput fully automated construction of a multiplex library of mutagenized open reading frames for an insecticidal peptide using a plasmid-based functional proteomic robotic workcell with improved vacuum system.},
+journal = {J. Assoc. Lab. Autom.},
+year = 2007,
+volume = 12,
+number = 4,
+pages = {202-212}
+}
+
+@article{yokobayashiWeiss02,
+  author = {Yokobayashi Y and R Weiss and FH Arnold},
+  title = {Directed evolution of a genetic circuit},
+  journal = {PNAS},
+  year = 2002,
+  volume = 99,
+  number = 26,
+  pages = {16587--91}
+}
+
+@article{hooshangiWeiss05,
+  title = {Ultrasensitivity and Noise Propagation in a Synthetic Transcriptional Cascade},
+  author = {Sara Hooshangi and Stephan Thiberge and Ron Weiss},
+  journal = {PNAS},
+  volume = 102,
+  number = 10,
+  pages = {3581--6},
+  year = 2005
+}
+
+@inproceedings{braunWeiss05,
+  author = {David Braun and Subhayu Basu and Ron Weiss},
+  title = {Parameter Estimation for Two Synthetic Gene Networks: A Case Study},
+  booktitle={Acoustics, Speech, and Signal Processing, 2005. Proceedings. (ICASSP '05). IEEE International Conference on},
+  year={2005},
+  month={March},
+  volume={5},
+  number={},
+  pages={ v/769 - v/772 Vol. 5},
+}
+
+@Article{newRules,
+  author = 	 {Andrianantoandro, E. and Basu, S. and Karig, D. K. and Weiss, R.},
+  title = 	 {Synthetic biology: new engineering rules for an emerging discipline},
+  journal = 	 {Mol Syst Biol},
+  year = 	 {2006},
+  OPTkey = 	 {},
+  volume = 	 {2},
+  OPTnumber = 	 {},
+  OPTpages = 	 {},
+  month = 	 {May},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+@article{Alterovitz,
+author = {Alterovitz, G. and Muso, T. and Ramoni, M. F.},
+title = {{The challenges of informatics in synthetic biology: from biomolecular networks to artificial organisms}},
+volume = {11},
+number = {1},
+pages = {80-95},
+year = {2010},
+doi = {10.1093/bib/bbp054},
+URL = {http://bib.oxfordjournals.org/content/11/1/80.abstract},
+eprint = {http://bib.oxfordjournals.org/content/11/1/80.full.pdf+html},
+journal = {Briefings in Bioinformatics}
+}
+
+
+
+@Article{EllisCollins09,
+  author = 	 {Ellis, Tom and Wang, Xiao and Collins, James},
+  title = 	 {Diversity-based, model-guided construction of synthetic gene networks with predicted functions},
+  journal = 	 {Nat Biotech},
+  year = 	 {2009},
+  OPTkey = 	 {},
+  volume = 	 {27},
+  number = 	 {5},
+  pages = 	 {465-471},
+  month = 	 {May},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+@Misc{Eugene,
+  author = 	 {{Berkeley Software 2009 iGem Team}},
+  title = 	 {Eugene},
+  howpublished = {http://2009.igem.org/ Team:Berkeley\_Software/Eugene},
+  month = {October},
+  year = 	 {2009}
+}
+
+@Article{GenoCAD,
+  author = 	 {MJ Czar and Y Cai and J Peccoud},
+  title = 	 {Writing {DNA} with {GenoCAD}},
+  journal = 	 {Nucleic Acids Research},
+  year = 	 {2009},
+  volume = 	 {37},
+  number = 	 {W40-7}
+}
+
+@Article{GEC,
+  author = 	 {M. Pedersen and A. Phillips},
+  title = 	 {Towards programming languages for genetic engineering of living cells},
+  journal = 	 {Journal of the Royal Society Interface},
+  year = 	 {2009}
+}
+
+
+@PhdThesis{mammalianSynBio,
+  author = 	 {Sairam Sbubramanian},
+  title = 	 {Synthetic Gene Networks for Differentiation of Mouse Embryonic Stem Cells},
+  school = 	 {Princeton University},
+  year = 	 {2008}
+}
+
+@Article{clothoAssembly,
+  author = 	 {Douglas Densmore and Timothy H. C. Hsiau and Christopher Batten and Joshua T. Kittleson and Will DeLoache},
+  title = 	 {Algorithms for Automated {DNA} Assembly},
+  journal = 	 {Nucleic Acids Research},
+  year = 	 {In Revision}
+}
+
+@InProceedings{clotho,
+ author = {Douglas Densmore and Anne Van Devender and Matthew Johnson and Nade Sritanyaratana},
+ title = {A platform-based design environment for synthetic biological systems},
+ booktitle = {TAPIA '09},
+ year = {2009},
+ pages = {24--29},
+ location = {Portland, Oregon},
+ publisher = {ACM},
+ note = "(www.clothocad.org)"
+ }
+
+@InProceedings{biocompile08,
+  author = 	 {J. Beal and J. Bachrach},
+  title = 	 {Cells are plausible targets for high-level spatial languages},
+  booktitle = {Spatial Computing Workshop},
+  year = 	 {2008},
+}
+
+@article{proto06a,
+ author = {J. Beal and Jonathan Bachrach},
+ title = {Infrastructure for Engineered Emergence in Sensor/Actuator Networks},
+ journal = {IEEE Intelligent Systems},
+ month = {March/April},
+ year = {2006},
+ pages = {10--19}
+ }
+
+@Comment 6. Ciglic, M., Fekonja, O., Kovac, J., Oblak, A., Pohar, J., Skocaj,
+@Comment M., Tkavc, R., Bencina, M., Panter, G., Keber, M.M., Dolinar, M., and
+@Comment Jerala, R. ``Engineered human cells: say no to sepsis,'' IET Synthetic
+@Comment Biology. June 2007, 1, (1-2): 13-16.
+
+@Article{elowitz,
+  author = 	 {Michael B. Elowitz and Stanislas Leibler},
+  title = 	 {A synthetic oscillatory network of transcriptional regulators},
+  year = 	 {2000},
+  volume = 403,
+  pages = {335-8},
+  month = {January 20},
+  journal = {Nature}
+}
+
+@techreport{biobrick-tr,
+  author = {T.F. Knight},
+  title = {Idempotent Vector Design for Standard Assembly of {BioBricks}},
+  institution = {MIT Synthetic Biology Working Group Technical Reports},
+  year = 2003
+}
+
+@techreport{biobytes,
+  author = {Michael Ellison and Doug Ridgway and Justin Fedor and Erin Garside and Kelly Robinson and David Lloyd},
+  title = {{BioBytes} Assembly Standard},
+  institution =  {The {BioBricks} Foundation},
+  year = 	 {2009},
+  number = 	 {BBF RFC 47}
+}
+
+@article{Feng2004BJ,
+  title  = {Optimizing Genetic Circuits by Global Sensitivity Analysis},
+  author = {Feng, X.J. and Hooshangi, S. and Chen, D. and Li, G. and Weiss, R. and Rabitz, H.},
+  journal= {Biophys. J.},
+  volume = {87},
+  year   = {2004},
+  number = {},
+  pages  = {2195--2202}
+}
+
+
+@article{brenner2007engineered,
+  title={{Engineered bidirectional communication mediates a consensus in a microbial biofilm consortium}},
+  author={Brenner, K. and Karig, D.K. and Weiss, R. and Arnold, F.H.},
+  journal={Proceedings of the National Academy of Sciences},
+  volume={104},
+  number={44},
+  pages={17300},
+  year={2007},
+  publisher={National Acad Sciences}
+}
+
+
+@phdthesis{weissPhd,
+  author = {Ron Weiss},
+  title = {Cellular Computation and Communications using Engineered Genetic Regulatory Networks},
+  school = {MIT},
+  year = 2001
+}
+
+@article{biobricksSpecSheet,
+  author = {B. Canton and A. Labno and D. Endy},
+  title = {Refinement and standardization of synthetic biological parts and devices},
+  journal = {Nature Biotechnology},
+  year = 2008,
+  month = {July},
+  volume = 26,
+  issue = 6,
+  pages = {787--93}
+}
+
+@article{biobricks2,
+  author = {Reshma P. Shetty and Drew Endy and Thomas F. Knight, Jr},
+  title = {Engineering BioBrick vectors from BioBrick parts},
+  journal = {Journal of Biological Engineering},
+  year = 2008,
+  volume = 2,
+  number = 5
+}
+
+@article{weiss2005b,
+  author = {Ryan McDaniel and Ron Weiss},
+  title = {Advances in Synthetic Biology: on the path from prototypes to applications},
+  journal = {Current Opinion in Biotechnology},
+  year = 2005,
+  volume = 16,
+  pages = {476--483}
+}
+
+@article{banddetect,
+  author = {Subhayu Basu and Yoram Gerchman and Cynthia H. Collins and Frances H. Arnold and Ron Weiss},
+  title = {A synthetic multicellular systems for programmed pattern formation},
+  journal = {Nature},
+  volume = 434,
+  year = 2005,
+  month = {April},
+  pages = {1130--1134}
+}
+
+@Misc{endySafety,
+  author = 	 {Drew Endy},
+  title = 	 {Strategy for biological risk \& security},
+  howpublished = {DARPA/ISAT Study on Synthetic Biology},
+  year = 	 {2003},
+  OPTkey = 	 {},
+  OPTtype = 	 {},
+  OPTnumber = 	 {},
+  OPTaddress = 	 {},
+  month = 	 {March},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+@Comment 9. ``Glowing bugs could find landmines.'' BBC News Online. 16
+@Comment Nov. 2009. Retrieved 6 Jan.  2010
+@Comment {\tt http://news.bbc.co.uk/2/hi/uk\_news/scotland/edinburgh\_and\_\\east/8362066.stm}.
+
+@PhdThesis{shetty,
+  author = 	 {Reshma P. Shetty},
+  title = 	 {Applying engineering principles to the design and construction of transcriptional devices},
+  school = 	 {MIT},
+  year = 	 {2008}
+}
+
+@Article{safety,
+  author = 	 {Meredith Wadman},
+  title = 	 {{US} drafts guidelines to screen genes},
+  journal = 	 {Nature News},
+  year = 	 {2009},
+  month = 	 {4 December}
+}
+
+@Article{purnick2009,
+  author = 	 {Priscilla E. M. Purnick and Ron Weiss},
+  title = 	 {The second wave of synthetic biology: from modules to systems},
+  journal = 	 {Nature Reviews Molecular Cell Biology},
+  year = 	 {2009},
+  OPTkey = 	 {},
+  volume = 	 {10},
+  number = 	 {6},
+  pages = 	 {410--422},
+  month = 	 {June},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+@InProceedings{beal2010Automatic,
+  author = 	 {Jacob Beal and Ting Lu and Ron Weiss},
+  title = 	 {Automatic Compilation from High-Level Languages to Genetic Regulatory Networks},
+  OPTcrossref =  {},
+  OPTkey = 	 {},
+  booktitle = {Proceedings of IWBDA},
+  OPTpages = 	 {},
+  year = 	 {2010},
+  OPTeditor = 	 {},
+  OPTvolume = 	 {},
+  OPTnumber = 	 {},
+  OPTseries = 	 {},
+  OPTaddress = 	 {},
+  month = 	 {June},
+  OPTorganization = {},
+  OPTpublisher = {},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+@book{carver,
+ author = {Mead, Carver and Conway, Lynn},
+ title = {Introduction to {VLSI} Systems},
+ year = {1980},
+ isbn = {0201043580},
+ publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+ address = {Boston, MA, USA},
+ }
+
+ @article{Winfree,
+author = {Soloveichik, D. and Seelig, G. and Winfree, E.},
+title = {{DNA as a universal substrate for chemical kinetics}},
+volume = {107},
+number = {12},
+pages = {5393-5398},
+year = {2010},
+doi = {10.1073/pnas.0909380107},
+URL = {http://www.pnas.org/content/107/12/5393.abstract},
+eprint = {http://www.pnas.org/content/107/12/5393.full.pdf+html},
+journal = {Proceedings of the National Academy of Sciences}
+}
+
+@Article{Riedel,
+author = {Shea, A. and Fett, B. and Riedel, M. D. and Parhi, K.},
+title = {Writing and compiling code into biochemistry.},
+journal = {Pac Symp Biocomput},
+year = {2010},
+pages = {456-64},
+url = {http://www.biomedsearch.com/nih/Writing-compiling-code-into-biochemistry/19908397.html},
+PubMedID = {19908397},
+ISSN = {1793-5091}
+}
+
+@article{biocompiler,
+author = {Jacob Beal and Jonathan Bachrach},
+title = {Cells Are Plausible Targets for High-Level Spatial Languages},
+journal ={Self-Adaptive and Self-Organizing Systems Workshops, IEEE International Conference on},
+volume = {0},
+isbn = {978-0-7695-3553-1},
+year = {2008},
+pages = {284-291},
+doi = {http://doi.ieeecomputersociety.org/10.1109/SASOW.2008.14},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+}
+
+@TECHREPORT{Messmer,
+    author = {B. T. Messmer and H. Bunke},
+    title = {Subgraph Isomorphism in Polynomial Time},
+    institution = {University of Bern},
+    year = {1995}
+}
+
+@InProceedings{dehon07,
+  author =	{Andr{\'e} DeHon and Jean-Louis Giavitto and Fr{\'e}deric Gruau},
+  title =	{06361 Executive Report -- Computing Media Languages for Space-Oriented Computation},
+  booktitle =	{Computing Media and Languages for Space-Oriented Computation},
+  year =	{2007},
+  editor =	{Andr{\'e} DeHon and Jean-Louis Giavitto and Fr{\'e}dric Gruau },
+  number =	{06361},
+  series =	{Dagstuhl Seminar Proceedings},
+  ISSN =	{1862-4405},
+  publisher =	{Internationales Begegnungs- und Forschungszentrum f{\"u}r Informatik (IBFI), Schloss Dagstuhl, Germany},
+  address =	{Dagstuhl, Germany},
+  URL =		{http://drops.dagstuhl.de/opus/volltexte/2007/1025},
+  annote =	{Keywords: Hardware architecture, computing medium, space-oriented computation, nonconventional programming models}
+}
+
+@book{scott2000,
+ author = {Scott, Michael L.},
+ title = {Programming language pragmatics},
+ year = {2000},
+ isbn = {1-55860-442-1},
+ publisher = {Morgan Kaufmann Publishers Inc.},
+ address = {San Francisco, CA, USA},
+} 
+
+@book{muchnick98,
+ author = {Muchnick, Steven S.},
+ title = {Advanced compiler design and implementation},
+ year = {1997},
+ isbn = {1-55860-320-4},
+ publisher = {Morgan Kaufmann Publishers Inc.},
+ address = {San Francisco, CA, USA},
+} 
+
+@Book{campbellBiology,
+  author = 	 {Neil A. Campbell and Jane B. Reece and Lisa A. Urry and Michael L. Cain and Steven A. Wasserman and Peter V. Minorsky and Robert B. Jackson},
+  ALTeditor = 	 {},
+  title = 	 {Biology},
+  publisher = 	 {Pearson Benjamin Cummings},
+  year = 	 {2008},
+  OPTkey = 	 {},
+  OPTvolume = 	 {},
+  OPTnumber = 	 {},
+  OPTseries = 	 {},
+  OPTtype = 	 {},
+  OPTaddress = 	 {San Francisco, CA},
+  edition = 	 {Eigth Edition},
+  OPTmonth = 	 {},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+@Misc{synBioTutorial,
+  author = 	 {OpenWetWare},
+  title = 	 {Synthetic Biology: SB101},
+  howpublished = {http://syntheticbiology.org/SB101.html},
+  month = {March},
+  year = 	 {2011}
+}

@@ -1,0 +1,397 @@
+a.b.c.d.e
+a.b
+f.d.e
+a.b.g.d.e
+a.b.f.d.e
+a.b
+g.d.e
+a.b
+h.d.e
+a.i.k.d.e
+a.i.{h}.d.e
+a.i.t.d.e
+a.i.{u}.d.e
+a.{v}.d.e
+a.{w}.d.e
+a.y.d.e
+a.{t}.d.e
+{o}.b
+{n}.b
+{kk}.b
+{jj}.b
+{ii}.b
+{Phns}.b
+{PrrnB P1}.b
+{p}.b
+l.b
+{kk}.{cc}.{g}.b
+{jj}.{cc}.{g}.b
+{ii}.{cc}.{g}.b
+{n}.{cc}.{g}.b
+{p}.{cc}.{g}.b
+l.{cc}.{g}.b
+a.{cc}.{g}.b
+a.b.g.{<int>}.d.e
+a.b.g.{<barnase>}.d.e
+a.b.g.{<cre>}.d.e
+a.b.g.{<cre>}.{<S-tag!}.e
+a.b.g.{<barnase>}.{<S-tag!}.e
+a.b.g.{<int>}.{<S-tag!}.e
+a.b.f.{<xis>}.d.e
+a.b.f.j.d.e
+a.b.f.j.{<S-tag!}.e
+a.b.f.{<xis>}.{<S-tag!}.e
+a.b.h.{<BglII>}.d.e
+a.b.h.{<ihfA>}.d.e
+a.b.h.{<BglII>}.{<S-tag!}.e
+a.b.h.{<ihfA>}.{<S-tag!}.e
+a.b.g.{<BamHI>}.{<S-tag!}.e
+a.b.g.{<BamHI>}.d.e
+a.b.g.{<ihfB>}.{<S-tag!}.e
+a.b.g.{<ihfB>}.d.e
+a.i.{h}.{<int>}.d.e
+a.{w}.{<int>}.d.e
+a.i.k.{<xis>}.d.e
+a.{v}.{<xis>}.d.e
+a.i.{h}.{<barnase>}.d.e
+a.{w}.{<barnase>}.d.e
+a.i.{h}.{<cre>}.d.e
+a.{w}.{<cre>}.d.e
+a.i.k.j.d.e
+a.{v}.j.d.e
+a.i.t.{<BamHI>}.d.e
+a.y.{<BamHI>}.d.e
+a.i.{u}.{<BglII>}.d.e
+a.{t}.{<BglII>}.d.e
+a.i.{u}.{<ihfA>}.d.e
+a.{t}.{<ihfA>}.d.e
+a.i.t.{<ihfB>}.d.e
+a.y.{<ihfB>}.d.e
+a.i.{h}.{<cre>}.{<S-tag!}.e
+a.{w}.{<cre>}.{<S-tag!}.e
+a.i.{h}.{<barnase>}.{<S-tag!}.e
+a.{w}.{<barnase>}.{<S-tag!}.e
+a.i.k.j.{<S-tag!}.e
+a.{v}.j.{<S-tag!}.e
+a.i.t.{<BamHI>}.{<S-tag!}.e
+a.y.{<BamHI>}.{<S-tag!}.e
+a.i.{u}.{<BglII>}.{<S-tag!}.e
+a.{t}.{<BglII>}.{<S-tag!}.e
+a.i.{h}.{<int>}.{<S-tag!}.e
+a.{w}.{<int>}.{<S-tag!}.e
+a.i.k.{<xis>}.{<S-tag!}.e
+a.{v}.{<xis>}.{<S-tag!}.e
+a.i.{u}.{<ihfA>}.{<S-tag!}.e
+a.{t}.{<ihfA>}.{<S-tag!}.e
+a.i.t.{<ihfB>}.{<S-tag!}.e
+a.y.{<ihfB>}.{<S-tag!}.e
+a.b.{cre>}.{<S-tag!}.e
+a.i.{a~cre>}.{<S-tag!}.e
+a.{rbs_cre>}.{<S-tag!}.e
+a.b.{ligase>}.{<S-tag!}.e
+a.i.{a~ligase>}.{<S-tag!}.e
+a.{rbs_ligase>}.{<S-tag!}.e
+a.b.{BamHI>}.{<S-tag!}.e
+a.i.{a~BamHI>}.{<S-tag!}.e
+a.{bb}.{<S-tag!}.e
+a.b.{BglII>}.{<S-tag!}.e
+a.i.{a~BglII>}.{<S-tag!}.e
+a.{rbs_BglII>}.{<S-tag!}.e
+a.b.{xis>}.{<S-tag!}.e
+a.i.{a~xis>}.{<S-tag!}.e
+a.{rbs_xis>}.{<S-tag!}.e
+a.b.{int>}.{<S-tag!}.e
+a.i.{a~int>}.{<S-tag!}.e
+a.{rbs_int>}.{<S-tag!}.e
+a.b.{ihfA>}.{<S-tag!}.e
+a.i.{a~ihfA>}.{<S-tag!}.e
+a.{rbs_ihfA>}.{<S-tag!}.e
+a.b.{ihfB>}.{<S-tag!}.e
+a.i.{a~ihfB>}.{<S-tag!}.e
+a.{rbs_ihfB>}.{<S-tag!}.e
+a.b.f.{<barnase>}.{<S-tag!}
+a.{rbs_barstar>}.{<S-tag!}.e
+a.b.c.{<AP>}.d.e
+a.b.c.{<HA>}.d.e
+a.b.c.{<myc>}.d.e
+a.b.c.{<FLAG>}.d.e
+a.b.c.{<phoA>}.{<AP!}.e
+a.b.c.{<phoA>}.{<HA!}.e
+a.b.c.{<phoA>}.{<myc!}.e
+a.b.c.{<phoA>}.{<FLAG!}.e
+m.b.g.{aa}.b.g.u.b.h.v.e.{ll}.n.{e}
+a.b.g.{aa}.b.g.u.b.h.v.e.{ll}.n.{e}
+{o}.b.g.{aa}.b.g.u.b.h.v.e.{ll}.n.{e}
+{ii}.b.g.{aa}.b.g.u.b.h.v.e.{ll}.n.{e}
+{jj}.b.g.{aa}.b.g.u.b.h.v.e.{ll}.n.{e}
+{kk}.b.g.{aa}.b.g.u.b.h.v.e.{ll}.n.{e}
+m.i.{h}.{aa}.i.t.u.i.{u}.v.e.{ll}.n.{e}
+a.i.{h}.{aa}.i.t.u.i.{u}.v.e.{ll}.n.{e}
+{o}.i.{h}.{aa}.i.t.u.i.{u}.v.e.{ll}.n.{e}
+{ii}.i.{h}.{aa}.i.t.u.i.{u}.v.e.{ll}.n.{e}
+{jj}.i.{h}.{aa}.i.t.u.i.{u}.v.e.{ll}.n.{e}
+{kk}.i.{h}.{aa}.i.t.u.i.{u}.v.e.{ll}.n.{e}
+m.{w}.{aa}.y.u.{t}.v.e.{ll}.n.{e}
+a.{w}.{aa}.y.u.{t}.v.e.{ll}.n.{e}
+{o}.{w}.{aa}.y.u.{t}.v.e.{ll}.n.{e}
+{ii}.{w}.{aa}.y.u.{t}.v.e.{ll}.n.{e}
+{jj}.{w}.{aa}.y.u.{t}.v.e.{ll}.n.{e}
+{kk}.{w}.{aa}.y.u.{t}.v.e.{ll}.n.{e}
+m.b.{int!}.b.{xis!}.b.{ihfA!}.b.{ihfB!}.e
+m.i.{a~int!}.i.{a~xis!}.i.{a~ihfA!}.i.{a~ihfB!}.e
+m.{rbs_int!}.{rbs_xis!}.{rbs_ihfA!}.s.e
+a.b.{int!}.b.{xis!}.b.{ihfA!}.b.{ihfB!}.e
+a.i.{a~int!}.i.{a~xis!}.i.{a~ihfA!}.i.{a~ihfB!}.e
+a.{rbs_int!}.{rbs_xis!}.{rbs_ihfA!}.s.e
+m.b.g.p.b.f.{<xis!}.b.h.{<ihfA!}.b.g.{<ihfB!}.e
+m.i.{h}.p.i.k.{<xis!}.i.{u}.{<ihfA!}.i.t.{<ihfB!}.e
+m.{w}.p.{v}.{<xis!}.{t}.{<ihfA!}.y.{<ihfB!}.e
+a.b.g.p.b.f.{<xis!}.b.h.{<ihfA!}.b.g.{<ihfB!}.e
+a.i.{h}.p.i.k.{<xis!}.i.{u}.{<ihfA!}.i.t.{<ihfB!}.e
+a.{w}.p.{v}.{<xis!}.{t}.{<ihfA!}.y.{<ihfB!}.e
+m.b.q.b.o.{e}.{Pcon-B5}.b.r.{d}
+m.b.q.b.o.{e}.{ll}.b.r.{d}
+m.b.q.b.o.{e}.{Pcon-G6}.b.r.{d}
+m.b.q.b.o.{e}.{Pcon}.b.r.{d}
+m.b.q.b.o.{e}.{Pcon-J23100}.b.r.{d}
+m.i.{b}.i.{j}.{e}.{Pcon-B5}.i.{dd}.{d}
+m.i.{b}.i.{j}.{e}.{ll}.i.{dd}.{d}
+m.i.{b}.i.{j}.{e}.{Pcon-G6}.i.{dd}.{d}
+m.i.{b}.i.{j}.{e}.{Pcon}.i.{dd}.{d}
+m.i.{b}.i.{j}.{e}.{Pcon-J23100}.i.{dd}.{d}
+m.{a}.{i}.{e}.{Pcon-B5}.{c}.{d}
+m.{a}.{i}.{e}.{ll}.{c}.{d}
+m.{a}.{i}.{e}.{Pcon-G6}.{c}.{d}
+m.{a}.{i}.{e}.{Pcon}.{c}.{d}
+m.{a}.{i}.{e}.{Pcon-J23100}.{c}.{d}
+m.b.{ff}.b.{l}.{e}.{Pcon-B5}.b.{m}.{d}
+m.b.{ff}.b.{l}.{e}.{ll}.b.{m}.{d}
+m.b.{ff}.b.{l}.{e}.{Pcon-G6}.b.{m}.{d}
+m.b.{ff}.b.{l}.{e}.{Pcon}.b.{m}.{d}
+m.b.{ff}.b.{l}.{e}.{Pcon-J23100}.b.{m}.{d}
+m.i.{k}.i.{a~lholin!}.{e}.{Pcon-B5}.i.{ee}.{d}
+m.i.{k}.i.{a~lholin!}.{e}.{ll}.i.{ee}.{d}
+m.i.{k}.i.{a~lholin!}.{e}.{Pcon-G6}.i.{ee}.{d}
+m.i.{k}.i.{a~lholin!}.{e}.{Pcon}.i.{ee}.{d}
+m.i.{k}.i.{a~lholin!}.{e}.{Pcon-J23100}.i.{ee}.{d}
+m.{q}.{f}.{e}.{Pcon-B5}.{hh}.{d}
+m.{q}.{f}.{e}.{ll}.{hh}.{d}
+m.{q}.{f}.{e}.{Pcon-G6}.{hh}.{d}
+m.{q}.{f}.{e}.{Pcon}.{hh}.{d}
+m.{q}.{f}.{e}.{Pcon-J23100}.{hh}.{d}
+m.{cc}.{g}.b.q.b.o.{e}.{Pcon-B5}.b.r.{d}
+m.{cc}.{g}.b.q.b.o.{e}.{ll}.b.r.{d}
+m.{cc}.{g}.b.q.b.o.{e}.{Pcon-G6}.b.r.{d}
+m.{cc}.{g}.b.q.b.o.{e}.{Pcon}.b.r.{d}
+m.{cc}.{g}.b.q.b.o.{e}.{Pcon-J23100}.b.r.{d}
+m.{cc}.{g}.i.{gg}.i.{j}.{e}.{Pcon-B5}.i.{dd}.{d}
+m.{cc}.{g}.i.{gg}.i.{j}.{e}.{ll}.i.{dd}.{d}
+m.{cc}.{g}.i.{gg}.i.{j}.{e}.{Pcon-G6}.i.{dd}.{d}
+m.{cc}.{g}.i.{gg}.i.{j}.{e}.{Pcon}.i.{dd}.{d}
+m.{cc}.{g}.i.{gg}.i.{j}.{e}.{Pcon-J23100}.i.{dd}.{d}
+m.{cc}.{g}.{a}.{i}.{e}.{Pcon-B5}.{c}.{d}
+m.{cc}.{g}.{a}.{i}.{e}.{ll}.{c}.{d}
+m.{cc}.{g}.{a}.{i}.{e}.{Pcon-G6}.{c}.{d}
+m.{cc}.{g}.{a}.{i}.{e}.{Pcon}.{c}.{d}
+m.{cc}.{g}.{a}.{i}.{e}.{Pcon-J23100}.{c}.{d}
+m.{cc}.{g}.b.{ff}.b.{l}.{e}.{Pcon-B5}.b.{m}.{d}
+m.{cc}.{g}.b.{ff}.b.{l}.{e}.{ll}.b.{m}.{d}
+m.{cc}.{g}.b.{ff}.b.{l}.{e}.{Pcon-G6}.b.{m}.{d}
+m.{cc}.{g}.b.{ff}.b.{l}.{e}.{Pcon}.b.{m}.{d}
+m.{cc}.{g}.b.{ff}.b.{l}.{e}.{Pcon-J23100}.b.{m}.{d}
+m.{cc}.{g}.i.{k}.i.{a~lholin!}.{e}.{Pcon-B5}.i.{ee}.{d}
+m.{cc}.{g}.i.{k}.i.{a~lholin!}.{e}.{ll}.i.{ee}.{d}
+m.{cc}.{g}.i.{k}.i.{a~lholin!}.{e}.{Pcon-G6}.i.{ee}.{d}
+m.{cc}.{g}.i.{k}.i.{a~lholin!}.{e}.{Pcon}.i.{ee}.{d}
+m.{cc}.{g}.i.{k}.i.{a~lholin!}.{e}.{Pcon-J23100}.i.{ee}.{d}
+m.{cc}.{g}.{q}.{f}.{e}.{Pcon-B5}.{hh}.{d}
+m.{cc}.{g}.{q}.{f}.{e}.{ll}.{hh}.{d}
+m.{cc}.{g}.{q}.{f}.{e}.{Pcon-G6}.{hh}.{d}
+m.{cc}.{g}.{q}.{f}.{e}.{Pcon}.{hh}.{d}
+m.{cc}.{g}.{q}.{f}.{e}.{Pcon-J23100}.{hh}.{d}
+a.b.q.b.o.{e}.{Pcon-B5}.b.r.{d}
+a.b.q.b.o.{e}.{ll}.b.r.{d}
+a.b.q.b.o.{e}.{Pcon-G6}.b.r.{d}
+a.b.q.b.o.{e}.{Pcon}.b.r.{d}
+a.b.q.b.o.{e}.{Pcon-J23100}.b.r.{d}
+a.i.{gg}.i.{j}.{e}.{Pcon-B5}.i.{dd}.{d}
+a.i.{gg}.i.{j}.{e}.{ll}.i.{dd}.{d}
+a.i.{gg}.i.{j}.{e}.{Pcon-G6}.i.{dd}.{d}
+a.i.{gg}.i.{j}.{e}.{Pcon}.i.{dd}.{d}
+a.i.{gg}.i.{j}.{e}.{Pcon-J23100}.i.{dd}.{d}
+a.{a}.{i}.{e}.{Pcon-B5}.{c}.{d}
+a.{a}.{i}.{e}.{ll}.{c}.{d}
+a.{a}.{i}.{e}.{Pcon-G6}.{c}.{d}
+a.{a}.{i}.{e}.{Pcon}.{c}.{d}
+a.{a}.{i}.{e}.{Pcon-J23100}.{c}.{d}
+a.b.{ff}.b.{l}.{e}.{Pcon-B5}.b.{m}.{d}
+a.b.{ff}.b.{l}.{e}.{ll}.b.{m}.{d}
+a.b.{ff}.b.{l}.{e}.{Pcon-G6}.b.{m}.{d}
+a.b.{ff}.b.{l}.{e}.{Pcon}.b.{m}.{d}
+a.b.{ff}.b.{l}.{e}.{Pcon-J23100}.b.{m}.{d}
+a.i.{k}.i.{a~lholin!}.{e}.{Pcon-B5}.i.{ee}.{d}
+a.i.{k}.i.{a~lholin!}.{e}.{ll}.i.{ee}.{d}
+a.i.{k}.i.{a~lholin!}.{e}.{Pcon-G6}.i.{ee}.{d}
+a.i.{k}.i.{a~lholin!}.{e}.{Pcon}.i.{ee}.{d}
+a.i.{k}.i.{a~lholin!}.{e}.{Pcon-J23100}.i.{ee}.{d}
+a.{q}.{f}.{e}.{Pcon-B5}.{hh}.{d}
+a.{q}.{f}.{e}.{ll}.{hh}.{d}
+a.{q}.{f}.{e}.{Pcon-G6}.{hh}.{d}
+a.{q}.{f}.{e}.{Pcon}.{hh}.{d}
+a.{q}.{f}.{e}.{Pcon-J23100}.{hh}.{d}
+{o}.b.q.b.o.{e}.{Phns}.b.r.{d}
+{kk}.b.q.b.o.{e}.{Phns}.b.r.{d}
+{ii}.b.q.b.o.{e}.{Phns}.b.r.{d}
+{jj}.b.q.b.o.{e}.{Phns}.b.r.{d}
+{o}.i.{b}.i.{j}.{e}.{Phns}.i.{dd}.{d}
+{kk}.i.{b}.i.{j}.{e}.{Phns}.i.{dd}.{d}
+{ii}.i.{b}.i.{j}.{e}.{Phns}.i.{dd}.{d}
+{jj}.i.{b}.i.{j}.{e}.{Phns}.i.{dd}.{d}
+{o}.{a}.{i}.{e}.{Phns}.{c}.{d}
+{kk}.{a}.{i}.{e}.{Phns}.{c}.{d}
+{ii}.{a}.{i}.{e}.{Phns}.{c}.{d}
+{jj}.{a}.{i}.{e}.{Phns}.{c}.{d}
+{o}.b.q.b.o.{e}.{PrrnB P1}.b.r.{d}
+{kk}.b.q.b.o.{e}.{PrrnB P1}.b.r.{d}
+{ii}.b.q.b.o.{e}.{PrrnB P1}.b.r.{d}
+{jj}.b.q.b.o.{e}.{PrrnB P1}.b.r.{d}
+{o}.i.{b}.i.{j}.{e}.{PrrnB P1}.i.{dd}.{d}
+{kk}.i.{b}.i.{j}.{e}.{PrrnB P1}.i.{dd}.{d}
+{ii}.i.{b}.i.{j}.{e}.{PrrnB P1}.i.{dd}.{d}
+{jj}.i.{b}.i.{j}.{e}.{PrrnB P1}.i.{dd}.{d}
+{o}.{a}.{i}.{e}.{PrrnB P1}.{c}.{d}
+{kk}.{a}.{i}.{e}.{PrrnB P1}.{c}.{d}
+{ii}.{a}.{i}.{e}.{PrrnB P1}.{c}.{d}
+{jj}.{a}.{i}.{e}.{PrrnB P1}.{c}.{d}
+{o}.b.{ff}.b.{l}.{e}.{Phns}.b.{m}.{d}
+{kk}.b.{ff}.b.{l}.{e}.{Phns}.b.{m}.{d}
+{ii}.b.{ff}.b.{l}.{e}.{Phns}.b.{m}.{d}
+{jj}.b.{ff}.b.{l}.{e}.{Phns}.b.{m}.{d}
+{o}.i.{k}.i.{a~lholin!}.{e}.{Phns}.i.{ee}.{d}
+{kk}.i.{k}.i.{a~lholin!}.{e}.{Phns}.i.{ee}.{d}
+{ii}.i.{k}.i.{a~lholin!}.{e}.{Phns}.i.{ee}.{d}
+{jj}.i.{k}.i.{a~lholin!}.{e}.{Phns}.i.{ee}.{d}
+{o}.{q}.{f}.{e}.{Phns}.{hh}.{d}
+{kk}.{q}.{f}.{e}.{Phns}.{hh}.{d}
+{ii}.{q}.{f}.{e}.{Phns}.{hh}.{d}
+{jj}.{q}.{f}.{e}.{Phns}.{hh}.{d}
+{o}.b.{ff}.b.{l}.{e}.{PrrnB P1}.b.{m}.{d}
+{kk}.b.{ff}.b.{l}.{e}.{PrrnB P1}.b.{m}.{d}
+{ii}.b.{ff}.b.{l}.{e}.{PrrnB P1}.b.{m}.{d}
+{jj}.b.{ff}.b.{l}.{e}.{PrrnB P1}.b.{m}.{d}
+{o}.i.{k}.i.{a~lholin!}.{e}.{PrrnB P1}.i.{ee}.{d}
+{kk}.i.{k}.i.{a~lholin!}.{e}.{PrrnB P1}.i.{ee}.{d}
+{ii}.i.{k}.i.{a~lholin!}.{e}.{PrrnB P1}.i.{ee}.{d}
+{jj}.i.{k}.i.{a~lholin!}.{e}.{PrrnB P1}.i.{ee}.{d}
+{o}.{q}.{f}.{e}.{PrrnB P1}.{hh}.{d}
+{kk}.{q}.{f}.{e}.{PrrnB P1}.{hh}.{d}
+{ii}.{q}.{f}.{e}.{PrrnB P1}.{hh}.{d}
+{jj}.{q}.{f}.{e}.{PrrnB P1}.{hh}.{d}
+{p}.b.q.e.{o}.b.o.{e}.{Phns}.b.r.{d}
+{p}.i.{b}.e.{o}.i.{j}.{e}.{Phns}.i.{dd}.{d}
+{p}.{a}.e.{o}.{i}.{e}.{Phns}.{c}.{d}
+{p}.b.q.e.{o}.b.o.{e}.{PrrnB P1}.b.r.{d}
+{p}.i.{b}.e.{o}.i.{j}.{e}.{PrrnB P1}.i.{dd}.{d}
+{p}.{a}.e.{o}.{i}.{e}.{PrrnB P1}.{c}.{d}
+{p}.b.{ff}.e.{o}.b.{l}.{e}.{Phns}.b.{m}.{d}
+{p}.i.{k}.e.{o}.i.{a~lholin!}.{e}.{Phns}.i.{ee}.{d}
+{p}.{q}.e.{o}.{f}.{e}.{Phns}.{hh}.{d}
+{p}.b.{ff}.e.{o}.b.{l}.{e}.{PrrnB P1}.b.{m}.{d}
+{p}.i.{k}.e.{o}.i.{a~lholin!}.{e}.{PrrnB P1}.i.{ee}.{d}
+{p}.{q}.e.{o}.{f}.{e}.{PrrnB P1}.{hh}.{d}
+{o}.b.q.e.{p}.b.o.{e}.{Phns}.b.r.{d}
+{o}.i.{b}.e.{p}.i.{j}.{e}.{Phns}.i.{dd}.{d}
+{o}.{a}.e.{p}.{i}.{e}.{Phns}.{c}.{d}
+{o}.b.q.e.{p}.b.o.{e}.{PrrnB P1}.b.r.{d}
+{o}.i.{b}.e.{p}.i.{j}.{e}.{PrrnB P1}.i.{dd}.{d}
+{o}.{a}.e.{p}.{i}.{e}.{PrrnB P1}.{c}.{d}
+{o}.b.{ff}.e.{p}.b.{l}.{e}.{Phns}.b.{m}.{d}
+{o}.i.{k}.e.{p}.i.{a~lholin!}.{e}.{Phns}.i.{ee}.{d}
+{o}.{q}.e.{p}.{f}.{e}.{Phns}.{hh}.{d}
+{o}.b.{ff}.e.{p}.b.{l}.{e}.{PrrnB P1}.b.{m}.{d}
+{o}.i.{k}.e.{p}.i.{a~lholin!}.{e}.{PrrnB P1}.i.{ee}.{d}
+{o}.{q}.e.{p}.{f}.{e}.{PrrnB P1}.{hh}.{d}
+{n}.{cc}.{g}.b.q.e.{o}.b.o.{e}.{Phns}.b.r.{d}
+{n}.{cc}.{g}.i.{b}.e.{o}.i.{j}.{e}.{Phns}.i.{dd}.{d}
+{n}.{cc}.{g}.{a}.e.{o}.{i}.{e}.{Phns}.{c}.{d}
+{n}.{cc}.{g}.b.q.e.{o}.b.o.{e}.{PrrnB P1}.b.r.{d}
+{n}.{cc}.{g}.i.{b}.e.{o}.i.{j}.{e}.{PrrnB P1}.i.{dd}.{d}
+{n}.{cc}.{g}.{a}.e.{o}.{i}.{e}.{PrrnB P1}.{c}.{d}
+{n}.{cc}.{g}.b.{ff}.e.{o}.b.{l}.{e}.{Phns}.b.{m}.{d}
+{n}.{cc}.{g}.i.{k}.e.{o}.i.{a~lholin!}.{e}.{Phns}.i.{ee}.{d}
+{n}.{cc}.{g}.{q}.e.{o}.{f}.{e}.{Phns}.{hh}.{d}
+{n}.{cc}.{g}.b.{ff}.e.{o}.b.{l}.{e}.{PrrnB P1}.b.{m}.{d}
+{n}.{cc}.{g}.i.{k}.e.{o}.i.{a~lholin!}.{e}.{PrrnB P1}.i.{ee}.{d}
+{n}.{cc}.{g}.{q}.e.{o}.{f}.{e}.{PrrnB P1}.{hh}.{d}
+m.b.{x}.b.{cre!}.e
+m.i.{z}.i.{a~cre!}.e
+m.{y}.{rbs_cre!}.e
+m.b.{x}.b.{ligase!}.e
+m.i.{z}.i.{a~ligase!}.e
+m.{y}.z.e
+m.b.{x}.b.{ligase!}.b.{cre!}.e
+m.i.{z}.i.{a~ligase!}.i.{a~cre!}.e
+m.{y}.z.{rbs_cre!}.e
+a.b.{x}.b.{cre!}.e
+a.i.{z}.i.{a~cre!}.e
+a.{y}.{rbs_cre!}.e
+a.b.{x}.b.{ligase!}.e
+a.i.{z}.i.{a~ligase!}.e
+a.{y}.z.e
+a.b.{x}.b.{ligase!}.b.{cre!}.e
+a.i.{z}.i.{a~ligase!}.i.{a~cre!}.e
+a.{y}.z.{rbs_cre!}.e
+m.b.{BamHI!}.b.{cre!}.e
+m.i.{r}.i.{a~cre!}.e
+m.{s}.{rbs_cre!}.e
+m.b.{BamHI!}.b.{ligase!}.e
+m.i.{r}.i.{a~ligase!}.e
+m.{s}.z.e
+m.b.{BamHI!}.b.{ligase!}.b.{cre!}.e
+m.i.{r}.i.{a~ligase!}.i.{a~cre!}.e
+m.{s}.z.{rbs_cre!}.e
+a.b.{BamHI!}.b.{cre!}.e
+a.i.{r}.i.{a~cre!}.e
+a.{s}.{rbs_cre!}.e
+a.b.{BamHI!}.b.{ligase!}.e
+a.i.{r}.i.{a~ligase!}.e
+a.{s}.z.e
+a.b.{BamHI!}.b.{ligase!}.b.{cre!}.e
+a.i.{r}.i.{a~ligase!}.i.{a~cre!}.e
+a.{s}.z.{rbs_cre!}.e
+m.b.h.v.b.g.w.e
+m.i.{u}.v.i.{h}.w.e
+m.{t}.v.{w}.w.e
+m.b.h.v.b.f.x.e
+m.i.{u}.v.i.k.x.e
+m.{t}.v.{v}.x.e
+m.b.h.v.b.f.x.b.g.w.e
+m.i.{u}.v.i.k.x.i.{h}.w.e
+m.{t}.v.{v}.x.{w}.w.e
+a.b.h.v.b.g.w.e
+a.i.{u}.v.i.{h}.w.e
+a.{t}.v.{w}.w.e
+a.b.h.v.b.f.x.e
+a.i.{u}.v.i.k.x.e
+a.{t}.v.{v}.x.e
+a.b.h.v.b.f.x.b.g.w.e
+a.i.{u}.v.i.k.x.i.{h}.w.e
+a.{t}.v.{v}.x.{w}.w.e
+m.b.g.u.b.g.w.e
+m.i.t.u.i.{h}.w.e
+m.y.u.{w}.w.e
+m.b.g.u.b.f.x.e
+m.i.t.u.i.k.x.e
+m.y.u.{v}.x.e
+m.b.g.u.b.f.x.b.g.w.e
+m.i.t.u.i.k.x.i.{h}.w.e
+m.y.u.{v}.x.{w}.w.e
+a.b.g.u.b.g.w.e
+a.i.t.u.i.{h}.w.e
+a.y.u.{w}.w.e
+a.b.g.u.b.f.x.e
+a.i.t.u.i.k.x.e
+a.y.u.{v}.x.e
+a.b.g.u.b.f.x.b.g.w.e
+a.i.t.u.i.k.x.i.{h}.w.e
+a.y.u.{v}.x.{w}.w.e

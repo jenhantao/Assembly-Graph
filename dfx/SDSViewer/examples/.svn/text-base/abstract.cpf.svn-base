@@ -1,0 +1,16 @@
+#p1.p2.r1.g1.t1.p3.p4.r2.g2.t2.p5.r3.g3.t3
+
+p1,Promoter,70
+p2,Promoter,80
+r1,RBS,16
+g1,Gene,1000
+t1,Terminator,40
+p3,Promoter,90
+p4,Promoter,65
+r2,RBS,18
+g2,Gene,2000
+t2,Terminator,45
+p5,Promoter,75
+r3,RBS,16
+g3,Gene,1000
+t3,Terminator,40

@@ -1,0 +1,42 @@
+10
+
+dir
+0
+svn+ssh://jenhantao@128.197.164.27/home/cidar/dfx/ClothoSDSViewer/src/newsds
+svn+ssh://jenhantao@128.197.164.27/home/cidar/dfx
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+bf6f631f-f2be-442a-816e-d2db8dbeae88
+
+algorithms
+dir
+
+
+
+add
+
+datastructures
+dir
+
+
+
+add
+

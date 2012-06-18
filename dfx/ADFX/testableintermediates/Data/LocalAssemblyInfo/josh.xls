@@ -1,0 +1,189 @@
+Stage 0
+Name	Description	Color			Lefty	Description	Color	Righty	Description	Color
+a	a	CK			
+b	b	KA			
+c	c	AC			
+d	d	CK			
+e	e	KA			
+f	f	AK			
+g	g	KC			
+m	m	CK			
+j	j	KA			
+n	n	KA			
+n	n	AC			
+f	f	CA			
+g	g	AK			
+a	a	KA			
+b	b	AC			
+c	c	CK			
+d	d	KA			
+e	e	AC			
+h	h	CK			
+i	i	KC			
+j	j	CA			
+d	d	AK			
+k	k	KA			
+a	a	CA			
+l	l	KA			
+d	d	CA			
+k	k	AC			
+a	a	KC			
+l	l	AC			
+c	c	AK			
+f	f	KA			
+g	g	AC			
+b	b	AK			
+k	k	AK			
+l	l	AK			
+n	n	CK			
+f	f	KC			
+g	g	CA			
+a	a	AK			
+b	b	KC			
+m	m	KC			
+e	e	CK			
+a	a	AC			
+b	b	CK			
+f	f	AC			
+g	g	CK			
+k	k	CK			
+l	l	CK			
+
+
+Stage 1
+Name	Description	Color			Lefty	Description	Color	Righty	Description	Color
+dza10	ab	CA			a	a	CK	b	b	KA
+dza11	cd	AK			c	c	AC	d	d	CK
+dza13	fg	AC			f	f	AK	g	g	KC
+dza15	mj	CA			m	m	CK	j	j	KA
+dza13	fg	CK			f	f	CA	g	g	AK
+dza10	ab	KC			a	a	KA	b	b	AC
+dza11	cd	CA			c	c	CK	d	d	KA
+dza21	ij	KA			i	i	KC	j	j	CA
+dza25	ak	CA			a	a	CK	k	k	KA
+dza28	al	CA			a	a	CK	l	l	KA
+dza25	ak	KC			a	a	KA	k	k	AC
+dza28	al	KC			a	a	KA	l	l	AC
+dza13	fg	KC			f	f	KA	g	g	AC
+dza10	ab	CK			a	a	CA	b	b	AK
+dza25	ak	CK			a	a	CA	k	k	AK
+dza35	ac	CK			a	a	CA	c	c	AK
+dza28	al	CK			a	a	CA	l	l	AK
+dza13	fg	KA			f	f	KC	g	g	CA
+dza10	ab	AC			a	a	AK	b	b	KC
+dza15	mj	KA			m	m	KC	j	j	CA
+dza10	ab	AK			a	a	AC	b	b	CK
+dza13	fg	AK			f	f	AC	g	g	CK
+
+
+Stage 2
+Name	Description	Color			Lefty	Description	Color	Righty	Description	Color
+dza12	abcd	CK			dza10	ab	CA	dza11	cd	AK
+dza14	efg	KC			e	e	KA	dza13	fg	AC
+dza17	nfg	KC			n	n	KA	dza13	fg	AC
+dza17	nfg	AK			n	n	AC	dza13	fg	CK
+dza12	abcd	KA			dza10	ab	KC	dza11	cd	CA
+dza14	efg	AK			e	e	AC	dza13	fg	CK
+dza22	hij	CA			h	h	CK	dza21	ij	KA
+dza24	abd	CK			dza10	ab	CA	d	d	AK
+dza26	akd	CK			dza25	ak	CA	d	d	AK
+dza27	acd	CK			a	a	CA	dza11	cd	AK
+dza29	ald	CK			dza28	al	CA	d	d	AK
+dza24	abd	KA			dza10	ab	KC	d	d	CA
+dza26	akd	KA			dza25	ak	KC	d	d	CA
+dza27	acd	KA			a	a	KC	dza11	cd	CA
+dza29	ald	KA			dza28	al	KC	d	d	CA
+dza33	abc	CK			dza10	ab	CA	c	c	AK
+dza36	fgmj	KA			dza13	fg	KC	dza15	mj	CA
+dza17	nfg	CA			n	n	CK	dza13	fg	KA
+dza33	abc	AK			dza10	ab	AC	c	c	CK
+dza14	efg	CA			e	e	CK	dza13	fg	KA
+dza41	fga	AC			dza13	fg	AK	a	a	KC
+dza43	kmj	CA			k	k	CK	dza15	mj	KA
+dza45	cmj	CA			c	c	CK	dza15	mj	KA
+dza46	lmj	CA			l	l	CK	dza15	mj	KA
+
+
+Stage 3
+Name	Description	Color			Lefty	Description	Color	Righty	Description	Color
+dza16	efgmj	KA			dza14	efg	KC	dza15	mj	CA
+dza18	nfgmj	KA			dza17	nfg	KC	dza15	mj	CA
+dza19	mjnfg	CK			dza15	mj	CA	dza17	nfg	AK
+dza20	mjefg	CK			dza15	mj	CA	dza14	efg	AK
+dza23	efghij	KA			dza14	efg	KC	dza22	hij	CA
+dza30	nfghij	KA			dza17	nfg	KC	dza22	hij	CA
+dza31	hijnfg	CK			dza22	hij	CA	dza17	nfg	AK
+dza32	hijefg	CK			dza22	hij	CA	dza14	efg	AK
+dza34	fghij	KA			dza13	fg	KC	dza22	hij	CA
+gza145	abcfgmj	CA			dza33	abc	CK	dza36	fgmj	KA
+gza146	abfgmj	CA			dza10	ab	CK	dza36	fgmj	KA
+gza147	akfgmj	CA			dza25	ak	CK	dza36	fgmj	KA
+gza148	acfgmj	CA			dza35	ac	CK	dza36	fgmj	KA
+gza149	alfgmj	CA			dza28	al	CK	dza36	fgmj	KA
+dza37	nfgabc	CK			dza17	nfg	CA	dza33	abc	AK
+dza38	efgabc	CK			dza14	efg	CA	dza33	abc	AK
+dza39	nfgab	CK			dza17	nfg	CA	dza10	ab	AK
+dza40	efgab	CK			dza14	efg	CA	dza10	ab	AK
+dza42	nfga	KC			n	n	KA	dza41	fga	AC
+dza44	efga	KC			e	e	KA	dza41	fga	AC
+
+
+Stage 4
+Name	Description	Color			Lefty	Description	Color	Righty	Description	Color
+gza100	abcdefgmj	CA			dza12	abcd	CK	dza16	efgmj	KA
+gza101	abcdnfgmj	CA			dza12	abcd	CK	dza18	nfgmj	KA
+gza102	mjnfgabcd	CA			dza19	mjnfg	CK	dza12	abcd	KA
+gza103	mjefgabcd	CA			dza20	mjefg	CK	dza12	abcd	KA
+gza104	abcdefghij	CA			dza12	abcd	CK	dza23	efghij	KA
+gza105	abdefghij	CA			dza24	abd	CK	dza23	efghij	KA
+gza106	akdefghij	CA			dza26	akd	CK	dza23	efghij	KA
+gza107	acdefghij	CA			dza27	acd	CK	dza23	efghij	KA
+gza108	aldefghij	CA			dza29	ald	CK	dza23	efghij	KA
+gza109	abcdnfghij	CA			dza12	abcd	CK	dza30	nfghij	KA
+gza110	abdnfghij	CA			dza24	abd	CK	dza30	nfghij	KA
+gza111	akdnfghij	CA			dza26	akd	CK	dza30	nfghij	KA
+gza112	acdnfghij	CA			dza27	acd	CK	dza30	nfghij	KA
+gza113	aldnfghij	CA			dza29	ald	CK	dza30	nfghij	KA
+gza114	hijnfgabcd	CA			dza31	hijnfg	CK	dza12	abcd	KA
+gza115	hijefgabcd	CA			dza32	hijefg	CK	dza12	abcd	KA
+gza116	hijnfgabd	CA			dza31	hijnfg	CK	dza24	abd	KA
+gza117	hijefgabd	CA			dza32	hijefg	CK	dza24	abd	KA
+gza118	hijnfgakd	CA			dza31	hijnfg	CK	dza26	akd	KA
+gza119	hijefgakd	CA			dza32	hijefg	CK	dza26	akd	KA
+gza120	hijnfgacd	CA			dza31	hijnfg	CK	dza27	acd	KA
+gza121	hijefgacd	CA			dza32	hijefg	CK	dza27	acd	KA
+gza122	hijnfgald	CA			dza31	hijnfg	CK	dza29	ald	KA
+gza123	hijefgald	CA			dza32	hijefg	CK	dza29	ald	KA
+gza124	abdefgmj	CA			dza24	abd	CK	dza16	efgmj	KA
+gza125	akdefgmj	CA			dza26	akd	CK	dza16	efgmj	KA
+gza126	acdefgmj	CA			dza27	acd	CK	dza16	efgmj	KA
+gza127	aldefgmj	CA			dza29	ald	CK	dza16	efgmj	KA
+gza128	abdnfgmj	CA			dza24	abd	CK	dza18	nfgmj	KA
+gza129	akdnfgmj	CA			dza26	akd	CK	dza18	nfgmj	KA
+gza130	acdnfgmj	CA			dza27	acd	CK	dza18	nfgmj	KA
+gza131	aldnfgmj	CA			dza29	ald	CK	dza18	nfgmj	KA
+gza132	mjnfgabd	CA			dza19	mjnfg	CK	dza24	abd	KA
+gza133	mjefgabd	CA			dza20	mjefg	CK	dza24	abd	KA
+gza134	mjnfgakd	CA			dza19	mjnfg	CK	dza26	akd	KA
+gza135	mjefgakd	CA			dza20	mjefg	CK	dza26	akd	KA
+gza136	mjnfgacd	CA			dza19	mjnfg	CK	dza27	acd	KA
+gza137	mjefgacd	CA			dza20	mjefg	CK	dza27	acd	KA
+gza138	mjnfgald	CA			dza19	mjnfg	CK	dza29	ald	KA
+gza139	mjefgald	CA			dza20	mjefg	CK	dza29	ald	KA
+gza140	abcfghij	CA			dza33	abc	CK	dza34	fghij	KA
+gza141	abfghij	CA			dza10	ab	CK	dza34	fghij	KA
+gza142	akfghij	CA			dza25	ak	CK	dza34	fghij	KA
+gza143	acfghij	CA			dza35	ac	CK	dza34	fghij	KA
+gza144	alfghij	CA			dza28	al	CK	dza34	fghij	KA
+gza150	nfgabcmj	CA			dza37	nfgabc	CK	dza15	mj	KA
+gza151	efgabcmj	CA			dza38	efgabc	CK	dza15	mj	KA
+gza152	nfgabmj	CA			dza39	nfgab	CK	dza15	mj	KA
+gza153	efgabmj	CA			dza40	efgab	CK	dza15	mj	KA
+gza154	nfgakmj	KA			dza42	nfga	KC	dza43	kmj	CA
+gza155	efgakmj	KA			dza44	efga	KC	dza43	kmj	CA
+gza156	nfgacmj	KA			dza42	nfga	KC	dza45	cmj	CA
+gza157	efgacmj	KA			dza44	efga	KC	dza45	cmj	CA
+gza158	nfgalmj	KA			dza42	nfga	KC	dza46	lmj	CA
+gza159	efgalmj	KA			dza44	efga	KC	dza46	lmj	CA
+
+

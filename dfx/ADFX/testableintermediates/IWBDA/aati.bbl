@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+
+\bibitem{dft}
+{\sc Abramovici, M., Breuer, M., and Friedman, A.}
+\newblock {\em Digital Systems Testing and Testable Design}.
+\newblock AT\&T, IEEE PRESS, Piscataway, NJ, USA, 1990.
+
+\bibitem{clothoAssembly}
+{\sc Densmore, D., Hsiau, T.~H., Kittleson, J.~T., DeLoache, W., Batten, C.,
+  and Anderson, J.~C.}
+\newblock Algorithms for automated {DNA} assembly.
+\newblock {\em Nucleic Acids Research 38}, 8 (2010).
+
+\bibitem{MoClo}
+{\sc Weber, E., Engler, C., Gruetzner, R., Werner, S., and Marillonet, S.}
+\newblock A modular cloning system for standardized assembly of multigene
+  constructs.
+\newblock {\em PlosONE 6}, 2 (2010).
+
+\end{thebibliography}

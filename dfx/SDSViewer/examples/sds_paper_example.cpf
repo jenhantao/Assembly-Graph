@@ -1,0 +1,10 @@
+#a.b.c.d.e
+a,Promoter,20
+b,RBS,20
+c,Gene,2000
+d,RBS,20
+e,Gene,2000
+
+#a.b.c.g.h
+g,RBS,20
+h,Gene,2000

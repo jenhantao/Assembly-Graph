@@ -1,0 +1,26 @@
+igem_5edit.txt called with sharing: false and dof: false
+
+ initial
+  {Pbad}{rbs1-A}{fimH>}{<phoA!}{b1006} 3	4	0      ({Pbad}+(({rbs1-A}+{fimH>})+({<phoA!}+{b1006})))
+  {Pbad}{rbs1-A} 1	1	0      ({Pbad}+{rbs1-A})
+
+ max stages = 3
+
+ algo for 
+{Pbad}.{rbs1-A};
+{Pbad}.{rbs1-A}.{fimH>}.{<phoA!}.{b1006};
+ best trees
+  {Pbad}{rbs1-A}{fimH>}{<phoA!}{b1006} 3	4	0      ({Pbad}+(({rbs1-A}+{fimH>})+({<phoA!}+{b1006}))) dof: 6
+  {Pbad}{rbs1-A} 1	1	1      ({Pbad}+{rbs1-A}) dof: 1
+ removed goal part = {Pbad}{rbs1-A}{fimH>}{<phoA!}{b1006}
+
+ algo for 
+{Pbad}.{rbs1-A};
+ best trees
+  {Pbad}{rbs1-A} 1	1	1      ({Pbad}+{rbs1-A}) dof: 1
+ removed goal part = {Pbad}{rbs1-A}
+
+ final trees
+chosen{Pbad}{rbs1-A}{fimH>}{<phoA!}{b1006}({Pbad}+(({rbs1-A}+{fimH>})+({<phoA!}+{b1006}))){Pbad}{rbs1-A}({Pbad}+{rbs1-A})  {Pbad}{rbs1-A}{fimH>}{<phoA!}{b1006} 3	0	0      ({Pbad}+(({rbs1-A}+{fimH>})+({<phoA!}+{b1006})))
+  {Pbad}{rbs1-A} 1	0	1      ({Pbad}+{rbs1-A})
+Assembly cost 3	9	0 

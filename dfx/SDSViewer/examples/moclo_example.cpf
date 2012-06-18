@@ -1,0 +1,8 @@
+#pBad.rbs.CI.rbs.GFP.ter.pCI.rbs.RFP.ter
+pBad,Promoter,20
+pCI,Promoter,20
+rbs,RBS,20
+CI,Gene,1000
+GFP,Gene,1000
+ter,Terminator,20
+RFP,Gene,1000

@@ -1,0 +1,245 @@
+Another strange Nina example - (2,5)
+a.a
+b.c.a
+d.e
+f.g
+
+Strange subparts example
+Coloring - (3,11)
+
+10.11.20.21.30.31.45 
+100.111.200.222.303.145
+
+Slack examples
+Coloring - (4,12)
+
+a.b.c.d.e.x.y.w
+a.b.c.d.e.l.j.k.m.n
+
+
+Coloring - (3,7)
+a.b.c.d
+a.d.h.b.c.g
+
+
+DOF
+Coloring - (3,7)
+
+l.f.s.t.u.n.i
+s.t.u.n.i
+
+
+Sharing
+Coloring - (3,14) 
+
+a.b.c.1.2.3.4
+a.b.c.6.7.8.9
+a.b.c.0.8.6.5
+
+Random simple cycle (that doesn't color)
+Coloring - (2,4)
+
+a.b.c
+a.b.c.d
+
+Plug-in
+Coloring - (3,21)->(3,24)simple cycle break
+
+bca1144.jtk2028
+pBca9145.bca1144.pBca9145
+bca1109.bca1144
+jtk2028.pBca9145
+jtk2025.bca1144.jtk2028
+jtk2028.pBca9145.pBca9145.bca1144.pBca9145
+bca1109.bca1144.jtk2028.pBca9145
+jtk2212.jtk2149.pBca9145
+jtk2149.pBca9145
+jtk2213.pBca9145.bca1144.pBca9145
+jtk2215.jtk2211.bca9473
+bca1172.bca1109.bca1144
+bca1172.bca1109.jtk2087
+jtk2088.jtk2192
+jtk2028.pBca9145.pBca9145.bca1144.pBca9145.jtk2180
+
+
+
+plug-in demo
+Coloring - (3,7)
+
+jtk2212.jtk2149.jtk2179.jtk2127.bca9473.jtk2128.jtk2180.jtk2215
+
+
+large with cycles (that don't color)
+Coloring - (4,15)
+
+a.c.d.d.g.e.g.u.y
+a.b.d
+e.g.u.k.y
+e.a.v
+
+igem_trick
+Coloring - (4,38)
+
+b.c.m.o.c.p.q.c.r.s.t.u.n.i 
+v.c.m.o.c.p.q.c.r.s.t.u.n.i 
+x.l.d.o.l.e.q.l.f.s.t.u.n.i 
+y.l.d.o.l.e.q.l.f.s.t.u.n.i 
+A.o.B.q.C.s.t.u.n.i 
+x.A.o.B.q.C.s.t.u.n.i
+
+input_jb
+Coloring - (3,20)
+
+Bca1109.Bjb3.Bjb1.sca11.Bca1092 
+Bca1109.Bjb3.Bjb1.sca12.Bca1092 
+Bca1109.Bjb3.Bjb1.sca13.Bca1092 
+Bca1109.Bjb3.sca5.Bjb2.Bca1092 
+Bca1109.Bjb3.sca6.Bjb2.Bca1092 
+Bca1109.Bjb3.sca7.Bjb2.Bca1092 
+Bca1109.Bca1346.sca11.Bca1092 
+Bca1109.Bca1346.sca12.Bca1092 
+Bca1109.Bca1346.sca13.Bca1092
+
+Single Cylic
+Coloring - (4,8)
+
+a.b.c.d.b.c.d.c.d.e
+
+Nina set
+Coloring - (2,7)
+a.b
+a.n.v.f
+f.g.a.b
+f.d
+
+Josh - Easy reading
+Coloring - (4,121) -> (4,124)correct cycle break
+
+a.b.c.d.e.f.g.h.i.j
+a.b.d.e.f.g.h.i.j
+a.k.d.e.f.g.h.i.j
+a.c.d.e.f.g.h.i.j
+a.l.d.e.f.g.h.i.j
+a.b.c.d.n.f.g.h.i.j
+a.b.d.n.f.g.h.i.j
+a.k.d.n.f.g.h.i.j
+a.c.d.n.f.g.h.i.j
+a.l.d.n.f.g.h.i.j
+a.b.c.d.e.f.g.m.j
+a.b.d.e.f.g.m.j
+a.k.d.e.f.g.m.j
+a.c.d.e.f.g.m.j
+a.l.d.e.f.g.m.j
+a.b.c.d.n.f.g.m.j
+a.b.d.n.f.g.m.j
+a.k.d.n.f.g.m.j
+a.c.d.n.f.g.m.j
+a.l.d.n.f.g.m.j
+m.j.n.f.g.a.b.c.d
+h.i.j.n.f.g.a.b.c.d
+m.j.e.f.g.a.b.c.d
+h.i.j.e.f.g.a.b.c.d
+m.j.n.f.g.a.b.d
+h.i.j.n.f.g.a.b.d
+m.j.e.f.g.a.b.d
+h.i.j.e.f.g.a.b.d
+m.j.n.f.g.a.k.d
+h.i.j.n.f.g.a.k.d
+m.j.e.f.g.a.k.d
+h.i.j.e.f.g.a.k.d
+m.j.n.f.g.a.c.d
+h.i.j.n.f.g.a.c.d
+m.j.e.f.g.a.c.d
+h.i.j.e.f.g.a.c.d
+m.j.n.f.g.a.l.d
+h.i.j.n.f.g.a.l.d
+m.j.e.f.g.a.l.d
+h.i.j.e.f.g.a.l.d
+a.b.c.f.g.h.i.j
+a.b.f.g.h.i.j
+a.k.f.g.h.i.j
+a.c.f.g.h.i.j
+a.l.f.g.h.i.j
+a.b.c.f.g.m.j
+a.b.f.g.m.j
+a.k.f.g.m.j
+a.c.f.g.m.j
+a.l.f.g.m.j
+n.f.g.a.b.c.m.j
+e.f.g.a.b.c.m.j
+n.f.g.a.b.m.j
+e.f.g.a.b.m.j
+n.f.g.a.k.m.j
+e.f.g.a.k.m.j
+n.f.g.a.c.m.j
+e.f.g.a.c.m.j
+n.f.g.a.l.m.j
+e.f.g.a.l.m.j
+
+
+
+Josh Original
+
+bca1109.bca1265.jtk2303.bsl1016.jtk2312.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.bca1265.bsl1016.jtk2312.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.jtk2302.bsl1016.jtk2312.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.jtk2303.bsl1016.jtk2312.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.jtk2304.bsl1016.jtk2312.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.bca1265.jtk2303.bsl1016.jtk2313.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.bca1265.bsl1016.jtk2313.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.jtk2302.bsl1016.jtk2313.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.jtk2303.bsl1016.jtk2313.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.jtk2304.bsl1016.jtk2313.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.bca1265.jtk2303.bsl1016.jtk2312.bca1229.bca1156.jtk2326.bca1092
+bca1109.bca1265.bsl1016.jtk2312.bca1229.bca1156.jtk2326.bca1092
+bca1109.jtk2302.bsl1016.jtk2312.bca1229.bca1156.jtk2326.bca1092
+bca1109.jtk2303.bsl1016.jtk2312.bca1229.bca1156.jtk2326.bca1092
+bca1109.jtk2304.bsl1016.jtk2312.bca1229.bca1156.jtk2326.bca1092
+bca1109.bca1265.jtk2303.bsl1016.jtk2313.bca1229.bca1156.jtk2326.bca1092
+bca1109.bca1265.bsl1016.jtk2313.bca1229.bca1156.jtk2326.bca1092
+bca1109.jtk2302.bsl1016.jtk2313.bca1229.bca1156.jtk2326.bca1092
+bca1109.jtk2303.bsl1016.jtk2313.bca1229.bca1156.jtk2326.bca1092
+bca1109.jtk2304.bsl1016.jtk2313.bca1229.bca1156.jtk2326.bca1092
+jtk2326.bca1092.jtk2313.bca1229.bca1156.bca1109.bca1265.jtk2303.bsl1016
+jtk2310.jtk2305.bca1092.jtk2313.bca1229.bca1156.bca1109.bca1265.jtk2303.bsl1016
+jtk2326.bca1092.jtk2312.bca1229.bca1156.bca1109.bca1265.jtk2303.bsl1016
+jtk2310.jtk2305.bca1092.jtk2312.bca1229.bca1156.bca1109.bca1265.jtk2303.bsl1016
+jtk2326.bca1092.jtk2313.bca1229.bca1156.bca1109.bca1265.bsl1016
+jtk2310.jtk2305.bca1092.jtk2313.bca1229.bca1156.bca1109.bca1265.bsl1016
+jtk2326.bca1092.jtk2312.bca1229.bca1156.bca1109.bca1265.bsl1016
+jtk2310.jtk2305.bca1092.jtk2312.bca1229.bca1156.bca1109.bca1265.bsl1016
+jtk2326.bca1092.jtk2313.bca1229.bca1156.bca1109.jtk2302.bsl1016
+jtk2310.jtk2305.bca1092.jtk2313.bca1229.bca1156.bca1109.jtk2302.bsl1016
+jtk2326.bca1092.jtk2312.bca1229.bca1156.bca1109.jtk2302.bsl1016
+jtk2310.jtk2305.bca1092.jtk2312.bca1229.bca1156.bca1109.jtk2302.bsl1016
+jtk2326.bca1092.jtk2313.bca1229.bca1156.bca1109.jtk2303.bsl1016
+jtk2310.jtk2305.bca1092.jtk2313.bca1229.bca1156.bca1109.jtk2303.bsl1016
+jtk2326.bca1092.jtk2312.bca1229.bca1156.bca1109.jtk2303.bsl1016
+jtk2310.jtk2305.bca1092.jtk2312.bca1229.bca1156.bca1109.jtk2303.bsl1016
+jtk2326.bca1092.jtk2313.bca1229.bca1156.bca1109.jtk2304.bsl1016
+jtk2310.jtk2305.bca1092.jtk2313.bca1229.bca1156.bca1109.jtk2304.bsl1016
+jtk2326.bca1092.jtk2312.bca1229.bca1156.bca1109.jtk2304.bsl1016
+jtk2310.jtk2305.bca1092.jtk2312.bca1229.bca1156.bca1109.jtk2304.bsl1016
+bca1109.bca1265.jtk2303.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.bca1265.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.jtk2302.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.jtk2303.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.jtk2304.bca1229.bca1156.jtk2310.jtk2305.bca1092
+bca1109.bca1265.jtk2303.bca1229.bca1156.jtk2326.bca1092
+bca1109.bca1265.bca1229.bca1156.jtk2326.bca1092
+bca1109.jtk2302.bca1229.bca1156.jtk2326.bca1092
+bca1109.jtk2303.bca1229.bca1156.jtk2326.bca1092
+bca1109.jtk2304.bca1229.bca1156.jtk2326.bca1092
+jtk2313.bca1229.bca1156.bca1109.bca1265.jtk2303.jtk2326.bca1092
+jtk2312.bca1229.bca1156.bca1109.bca1265.jtk2303.jtk2326.bca1092
+jtk2313.bca1229.bca1156.bca1109.bca1265.jtk2326.bca1092
+jtk2312.bca1229.bca1156.bca1109.bca1265.jtk2326.bca1092
+jtk2313.bca1229.bca1156.bca1109.jtk2302.jtk2326.bca1092
+jtk2312.bca1229.bca1156.bca1109.jtk2302.jtk2326.bca1092
+jtk2313.bca1229.bca1156.bca1109.jtk2303.jtk2326.bca1092
+jtk2312.bca1229.bca1156.bca1109.jtk2303.jtk2326.bca1092
+jtk2313.bca1229.bca1156.bca1109.jtk2304.jtk2326.bca1092
+jtk2312.bca1229.bca1156.bca1109.jtk2304.jtk2326.bca1092
+
+
+

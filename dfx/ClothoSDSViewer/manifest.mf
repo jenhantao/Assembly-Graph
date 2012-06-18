@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.clothocad.tool.clothosdsviewer
+OpenIDE-Module-Layer: org/clothocad/tool/clothosdsviewer/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/clothocad/tool/clothosdsviewer/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

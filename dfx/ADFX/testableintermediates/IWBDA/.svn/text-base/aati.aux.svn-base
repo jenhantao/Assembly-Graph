@@ -1,0 +1,21 @@
+\relax 
+\citation{MoClo}
+\citation{clothoAssembly}
+\citation{clothoAssembly}
+\citation{dft}
+\citation{dft}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Motivation}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Structural Testing}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \relax \fontsize  {8}{9pt}\selectfont  \abovedisplayskip 7.6pt plus 3pt minus 4pt\belowdisplayskip \abovedisplayskip \abovedisplayshortskip \z@ plus2pt\belowdisplayshortskip 3.6pt plus2pt minus 2pt \def \leftmargin \leftmargini \parsep 3.6pt plus 2pt minus 1pt\topsep 7.2pt plus 2pt minus 4pt\itemsep 3.6pt plus 2pt minus 1pt{\leftmargin \leftmargini \topsep 4pt plus 2pt minus 2pt\parsep 2pt plus 1pt minus 1pt \itemsep \parsep }{Assembly Plan Comparison A) State-of-the-art algorithms find an optimal assembly tree with intermediates that are too small, do not function and have low motif scores. B) The modified algorithm selects an assembly tree with the same score as the original algorithm but improves the intermediates to be the proper size, functionally testable and have a high motif score.}}}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Functional Testing}{\thepage }}
+\bibstyle{acm}
+\bibdata{aati}
+\bibcite{dft}{1}
+\bibcite{clothoAssembly}{2}
+\bibcite{MoClo}{3}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {8}{9pt}\selectfont  \abovedisplayskip 7.6pt plus 3pt minus 4pt\belowdisplayskip \abovedisplayskip \abovedisplayshortskip \z@ plus2pt\belowdisplayshortskip 3.6pt plus2pt minus 2pt \def \leftmargin \leftmargini \parsep 3.6pt plus 2pt minus 1pt\topsep 7.2pt plus 2pt minus 4pt\itemsep 3.6pt plus 2pt minus 1pt{\leftmargin \leftmargini \topsep 4pt plus 2pt minus 2pt\parsep 2pt plus 1pt minus 1pt \itemsep \parsep }{Example Modified Assembly Plan. A) A cascading genetic NOR gate B) DNA construct to satisfy this specification. C) Assembly plan: motif training step finds that RBS-Gene, RBS-Gene-Term and Prom-RBS-Gene-Term are the highest scoring motifs (M) and any sequence containing Prom-RBS-Gene is functionally testable (F). D) The testability and high scoring motif-abundance will be reported as a percent coverage, resulting in an assembly plan score. Reported is this plan's structural testability score (S), functional testability score (F) and high motif score (M).}}}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Motif Training}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Algorithm}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Contributions}{\thepage }}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Assembly for Test (goal parts, part lib, db)}}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {7}References}{\thepage }}

@@ -1,0 +1,109 @@
+Name	Description			Composite Part	Lefty	Righty
+N/A	Prom-ORF1Term1			N/A	Prom-ORF1	Term1
+N/A	Promoter1ORF1			N/A	Promoter1	ORF1
+N/A	Prom-ORF1Term1Promoter1ORF1			N/A	Prom-ORF1Term1	Promoter1ORF1
+N/A	ORF3ORF5			N/A	ORF3	ORF5
+N/A	ORF3ORF5Term2			N/A	ORF3ORF5	Term2
+N/A	Prom-ORF1Term1Promoter1ORF1ORF3ORF5Term2			N/A	Prom-ORF1Term1Promoter1ORF1	ORF3ORF5Term2
+
+
+N/A	Prom-ORF1Term1			N/A	Prom-ORF1	Term1
+N/A	Promoter1ORF1			N/A	Promoter1	ORF1
+N/A	Prom-ORF1Term1Promoter1ORF1			N/A	Prom-ORF1Term1	Promoter1ORF1
+N/A	ORF5Term2			N/A	ORF5	Term2
+N/A	Prom-ORF1Term1Promoter1ORF1ORF5Term2			N/A	Prom-ORF1Term1Promoter1ORF1	ORF5Term2
+
+
+N/A	Prom-ORF1Term1			N/A	Prom-ORF1	Term1
+N/A	Promoter1ORF2			N/A	Promoter1	ORF2
+N/A	Prom-ORF1Term1Promoter1ORF2			N/A	Prom-ORF1Term1	Promoter1ORF2
+N/A	ORF5Term2			N/A	ORF5	Term2
+N/A	Prom-ORF1Term1Promoter1ORF2ORF5Term2			N/A	Prom-ORF1Term1Promoter1ORF2	ORF5Term2
+
+
+N/A	Prom-ORF1Term1			N/A	Prom-ORF1	Term1
+N/A	Promoter1ORF4			N/A	Promoter1	ORF4
+N/A	Prom-ORF1Term1Promoter1ORF4			N/A	Prom-ORF1Term1	Promoter1ORF4
+N/A	ORF5Term2			N/A	ORF5	Term2
+N/A	Prom-ORF1Term1Promoter1ORF4ORF5Term2			N/A	Prom-ORF1Term1Promoter1ORF4	ORF5Term2
+
+
+N/A	Prom-ORF2Term1			N/A	Prom-ORF2	Term1
+N/A	Promoter1ORF1			N/A	Promoter1	ORF1
+N/A	Prom-ORF2Term1Promoter1ORF1			N/A	Prom-ORF2Term1	Promoter1ORF1
+N/A	ORF3ORF5			N/A	ORF3	ORF5
+N/A	ORF3ORF5Term2			N/A	ORF3ORF5	Term2
+N/A	Prom-ORF2Term1Promoter1ORF1ORF3ORF5Term2			N/A	Prom-ORF2Term1Promoter1ORF1	ORF3ORF5Term2
+
+
+N/A	Prom-ORF2Term1			N/A	Prom-ORF2	Term1
+N/A	Promoter1ORF1			N/A	Promoter1	ORF1
+N/A	Prom-ORF2Term1Promoter1ORF1			N/A	Prom-ORF2Term1	Promoter1ORF1
+N/A	ORF5Term2			N/A	ORF5	Term2
+N/A	Prom-ORF2Term1Promoter1ORF1ORF5Term2			N/A	Prom-ORF2Term1Promoter1ORF1	ORF5Term2
+
+
+N/A	Prom-ORF2Term1			N/A	Prom-ORF2	Term1
+N/A	Promoter1ORF2			N/A	Promoter1	ORF2
+N/A	Prom-ORF2Term1Promoter1ORF2			N/A	Prom-ORF2Term1	Promoter1ORF2
+N/A	ORF5Term2			N/A	ORF5	Term2
+N/A	Prom-ORF2Term1Promoter1ORF2ORF5Term2			N/A	Prom-ORF2Term1Promoter1ORF2	ORF5Term2
+
+
+N/A	Prom-ORF2Term1			N/A	Prom-ORF2	Term1
+N/A	Promoter1ORF4			N/A	Promoter1	ORF4
+N/A	Prom-ORF2Term1Promoter1ORF4			N/A	Prom-ORF2Term1	Promoter1ORF4
+N/A	ORF5Term2			N/A	ORF5	Term2
+N/A	Prom-ORF2Term1Promoter1ORF4ORF5Term2			N/A	Prom-ORF2Term1Promoter1ORF4	ORF5Term2
+
+
+N/A	Promoter1ORF1			N/A	Promoter1	ORF1
+N/A	ORF3Prom-ORF1			N/A	ORF3	Prom-ORF1
+N/A	Promoter1ORF1ORF3Prom-ORF1			N/A	Promoter1ORF1	ORF3Prom-ORF1
+N/A	ORF5Term2			N/A	ORF5	Term2
+N/A	Promoter1ORF1ORF3Prom-ORF1ORF5Term2			N/A	Promoter1ORF1ORF3Prom-ORF1	ORF5Term2
+
+
+N/A	Promoter1ORF1			N/A	Promoter1	ORF1
+N/A	Prom-ORF1ORF5			N/A	Prom-ORF1	ORF5
+N/A	Promoter1ORF1Prom-ORF1ORF5			N/A	Promoter1ORF1	Prom-ORF1ORF5
+N/A	Promoter1ORF1Prom-ORF1ORF5Term2			N/A	Promoter1ORF1Prom-ORF1ORF5	Term2
+
+
+N/A	Promoter1ORF2			N/A	Promoter1	ORF2
+N/A	Prom-ORF1ORF5			N/A	Prom-ORF1	ORF5
+N/A	Promoter1ORF2Prom-ORF1ORF5			N/A	Promoter1ORF2	Prom-ORF1ORF5
+N/A	Promoter1ORF2Prom-ORF1ORF5Term2			N/A	Promoter1ORF2Prom-ORF1ORF5	Term2
+
+
+N/A	Promoter1ORF4			N/A	Promoter1	ORF4
+N/A	Prom-ORF1ORF5			N/A	Prom-ORF1	ORF5
+N/A	Promoter1ORF4Prom-ORF1ORF5			N/A	Promoter1ORF4	Prom-ORF1ORF5
+N/A	Promoter1ORF4Prom-ORF1ORF5Term2			N/A	Promoter1ORF4Prom-ORF1ORF5	Term2
+
+
+N/A	Promoter1ORF1			N/A	Promoter1	ORF1
+N/A	ORF3Prom-ORF2			N/A	ORF3	Prom-ORF2
+N/A	Promoter1ORF1ORF3Prom-ORF2			N/A	Promoter1ORF1	ORF3Prom-ORF2
+N/A	ORF5Term2			N/A	ORF5	Term2
+N/A	Promoter1ORF1ORF3Prom-ORF2ORF5Term2			N/A	Promoter1ORF1ORF3Prom-ORF2	ORF5Term2
+
+
+N/A	Promoter1ORF1			N/A	Promoter1	ORF1
+N/A	Prom-ORF2ORF5			N/A	Prom-ORF2	ORF5
+N/A	Promoter1ORF1Prom-ORF2ORF5			N/A	Promoter1ORF1	Prom-ORF2ORF5
+N/A	Promoter1ORF1Prom-ORF2ORF5Term2			N/A	Promoter1ORF1Prom-ORF2ORF5	Term2
+
+
+N/A	Promoter1ORF2			N/A	Promoter1	ORF2
+N/A	Prom-ORF2ORF5			N/A	Prom-ORF2	ORF5
+N/A	Promoter1ORF2Prom-ORF2ORF5			N/A	Promoter1ORF2	Prom-ORF2ORF5
+N/A	Promoter1ORF2Prom-ORF2ORF5Term2			N/A	Promoter1ORF2Prom-ORF2ORF5	Term2
+
+
+N/A	Promoter1ORF4			N/A	Promoter1	ORF4
+N/A	Prom-ORF2ORF5			N/A	Prom-ORF2	ORF5
+N/A	Promoter1ORF4Prom-ORF2ORF5			N/A	Promoter1ORF4	Prom-ORF2ORF5
+N/A	Promoter1ORF4Prom-ORF2ORF5Term2			N/A	Promoter1ORF4Prom-ORF2ORF5	Term2
+
+

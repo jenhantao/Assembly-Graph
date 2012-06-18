@@ -1,0 +1,96 @@
+## Evan Appleton 2/28/12
+## Design for X graph
+
+graph DesignForX 
+	{
+	
+	node [fontsize=10,width=".4", height=".4", margin=".05"];
+	graph[fontsize=8];
+
+	subgraph cluster01
+	{
+	label="Design for X"
+	n001;
+	n001 [label="Design for X"];
+	n002 [label="Assembly"];
+	n003 [label="Characterization"];
+	n004 [label="Test"];
+	n001 -- n002;
+	n001 -- n003;
+	n001 -- n004;
+	}
+
+	subgraph cluster02
+	{
+	label="Design for Assembly"	
+	n002;
+	n005 [label="2 Parts"];	
+	n002 -- n005;
+
+	n006 [label="Variables"];
+	n007 [label="Simple"];
+	n008 [label="Complex"];
+	n005 -- n006;
+	n006 -- n007;
+	n006 -- n008;
+	
+	n009 [label="Parts"];
+	n010 [label="Simple"];
+	n011 [label="Complex"];
+	n012 [label="Sharing"];
+	n013 [label="Share"];
+	n014 [label="Slack"];
+	n015 [label="I.R."];
+	n016 [label="Testable"];
+	n017 [label="Complete"];
+	n018 [label="Partial"];
+	n019 [label="Plasmid No."];
+	n020 [label="Single"];
+	n021 [label="Multi"];
+	n005 -- n009;
+	n009 -- n010;
+	n009 -- n011;
+	n011 -- n012;
+	n012 -- n013;
+	n012 -- n014;
+	n012 -- n015;
+	n011 -- n016;
+	n016 -- n017;
+	n016 -- n018;
+	n011 -- n019;
+	n019 -- n020;
+	n019 -- n021;
+	
+	n022 [label="3+ Parts"];
+	n002 -- n022;
+	
+	n023 [label="Plants"];
+	n024 [label="Goldenbraid"];
+	n022 -- n023;
+	n023 -- n024;
+
+	n025 [label="Mammal/Bacteria"];
+	n026 [label="Gibson"];
+	n027 [label="CPEC"];
+	n028 [label="SLIC"];
+	n029 [label="USER"];
+	n030 [label="Gateway"];
+	n031 [label="Golden Gate"];
+	n032 [label="Mo-Clo"];
+	n033 [label="Variables"];
+	n034 [label="Parts"];
+	n035 [label="Planner"];
+	n022 -- n025;
+	n025 -- n026;
+	n025 -- n027;
+	n025 -- n028;
+	n025 -- n029;
+	n025 -- n030;
+	n025 -- n031 [len=2];
+	n025 -- n032;
+	n032 -- n033;
+	n032 -- n034;
+	n034 -- n035;
+	}
+
+}
