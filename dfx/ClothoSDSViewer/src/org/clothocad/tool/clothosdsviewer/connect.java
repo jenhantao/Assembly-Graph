@@ -37,6 +37,7 @@ import org.clothocore.api.data.ObjLink;
 import org.clothocore.api.data.ObjType;
 import org.clothocore.api.data.Person;
 import org.clothocore.api.plugin.ClothoTool;
+import sdsviewer.SDSViewerFrame;
 
 /**
  *
@@ -46,8 +47,7 @@ public class connect implements ClothoTool {
 
     @Override
     public void launch() {
-        JFrame frame  = new JFrame();
-        frame.setSize(300,300);
+        SDSViewerFrame frame  = new SDSViewerFrame();
         frame.setVisible(true);
        
     }

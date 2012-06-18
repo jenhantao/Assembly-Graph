@@ -12,23 +12,34 @@ package sdsviewer;
 
 import accessibility.CPFReader;
 import accessibility.PartAttributes;
+import edu.uci.ics.jung.visualization.GraphZoomScrollPane;
 import edu.uci.ics.jung.visualization.VisualizationViewer;
+import helper.ElapsedTime;
+import helper.HashStringBinaryTree;
+import helper.HashStringTree;
 import helper.StringList;
+import java.awt.Color;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Timer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.table.DefaultTableModel;
+import newsds.algorithms.SDSGeneralAlgorithm;
+import newsds.algorithms.SDSNewAlgorithm;
 import newsds.datastructures.BasicPart;
 import newsds.datastructures.CompositePart;
+import newsds.datastructures.SDSBinaryTree;
+import newsds.datastructures.SDSJointBinaryForest;
+import newsds.datastructures.SDSJointForest;
+import newsds.datastructures.SDSTree;
+import testability.FunctionallyTestableIntermediateFinder;
 import testability.IntermediateFinder;
+import viewers.BinaryGraphViewer;
+import viewers.GraphViewer;
 
 /**
  *
@@ -116,7 +127,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setName("jPanel1"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(sdsviewer.SDSViewerApp.class).getContext().getResourceMap(SDSViewerFrame.class);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(SDSViewerFrame.class);
         label2.setFont(resourceMap.getFont("label2.font")); // NOI18N
         label2.setName("label2"); // NOI18N
         label2.setText(resourceMap.getString("label2.text")); // NOI18N
@@ -586,6 +597,16 @@ public class SDSViewerFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //new Thread(new thread1()).start();         tpCanvas.removeAll();          findReqRecIntermediates();         runSDS();         runNewSDS();         runGeneralSDS();          refreshCanvas();     }//GEN-LAST:event_jButton2ActionPerformed
+       tpCanvas.removeAll();
+
+        findReqRecIntermediates();
+        runSDS();
+        runNewSDS();
+        runGeneralSDS();
+
+        refreshCanvas();
+    
+    
     }
         private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
 
@@ -678,7 +699,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             cpfReader = new CPFReader(fileName);
             _basicPartAttributes = cpfReader.getBasicPartAttributes();
         } catch (Exception ex) {
-            Logger.getLogger(SDSViewerView.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(SDSViewerView.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         taFileContents.setText(cpfReader.getFileContents());
@@ -797,4 +818,109 @@ public class SDSViewerFrame extends javax.swing.JFrame {
     private javax.swing.JTextField tfPathToFiles;
     private javax.swing.JTabbedPane tpCanvas;
     // End of variables declaration//GEN-END:variables
+
+  public void findReqRecIntermediates() {
+        _required = new ArrayList<StringList>();
+        _recommended = new ArrayList<StringList>();
+
+        DefaultTableModel model = ((DefaultTableModel) tIntermediates.getModel());
+
+        for (int index = 0; index < model.getRowCount(); index++) {
+            String partName = (String) model.getValueAt(index, 0);
+            boolean isRequired = (Boolean) model.getValueAt(index, 2);
+            boolean isRecommended = (Boolean) model.getValueAt(index, 3);
+
+            if (isRequired) {
+                _required.add(_intermediates.get(partName));
+                continue;
+            }
+            if (isRecommended) {
+                _recommended.add(_intermediates.get(partName));
+            }
+        }
+    }
+  private void runSDS() {
+        SDSNewAlgorithm sds = new SDSNewAlgorithm();
+
+        ArrayList<StringList> gps = convertGps(_goalParts);
+
+        ElapsedTime.start();
+        ArrayList<SDSBinaryTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(gps, new ArrayList<StringList>(), new ArrayList<StringList>(), new HashStringBinaryTree());
+        ElapsedTime.stop();
+
+        SDSJointBinaryForest orgJbf = sds.convertTo2ab(orgGoalPartTrees);
+        BinaryGraphViewer orgJbfViewer = new BinaryGraphViewer(orgJbf);
+        orgJbfViewer.setBackground(new Color(206, 218, 255));
+//        LayoutScalingControl scalingPlugin = new LayoutScalingControl();
+//        orgJbfViewer.getVV().scaleToLayout(scalingPlugin);
+//        scalingPlugin.scale(orgJbfViewer.getVV(), .2f, new Point(0,0));
+        this.addGraph(this.SDS_TITLE, orgJbfViewer.getVV());
+
+        Statistics stat = new Statistics();
+        stat.setExecutionTime(ElapsedTime.getTime());
+        stat.setStages(orgJbf.getNode().getStages());
+        stat.setSteps(orgJbf.getNode().getSteps());
+        stat.setGoalParts(_goalParts.size());
+        _statistics.put(this.SDS_TITLE, stat);
+    }
+
+    private void runNewSDS() {
+        SDSNewAlgorithm sds = new SDSNewAlgorithm();
+
+        ArrayList<StringList> gps = convertGps(_goalParts);
+
+        ElapsedTime.start();
+        ArrayList<SDSBinaryTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(gps, _required, _recommended, new HashStringBinaryTree());
+        ElapsedTime.stop();
+
+        SDSJointBinaryForest orgJbf = sds.convertTo2ab(orgGoalPartTrees);
+        BinaryGraphViewer orgJbfViewer = new BinaryGraphViewer(orgJbf);
+        orgJbfViewer.setBackground(new Color(211, 255, 206));
+//        LayoutScalingControl scalingPlugin = new LayoutScalingControl();
+//        orgJbfViewer.getVV().scaleToLayout(scalingPlugin);
+//        scalingPlugin.scale(orgJbfViewer.getVV(), .2f, new Point(0,0));
+        this.addGraph(this.NEW_SDS_TITLE, orgJbfViewer.getVV());
+
+        Statistics stat = new Statistics();
+        stat.setExecutionTime(ElapsedTime.getTime());
+        stat.setStages(orgJbf.getNode().getStages());
+        stat.setSteps(orgJbf.getNode().getSteps());
+        stat.setGoalParts(_goalParts.size());
+        _statistics.put(this.NEW_SDS_TITLE, stat);
+    }
+
+    private void runGeneralSDS() {
+        FunctionallyTestableIntermediateFinder finder = new FunctionallyTestableIntermediateFinder();
+        ArrayList<CompositePart> required = finder.getCompositeParts(_goalParts);
+
+        SDSGeneralAlgorithm sds = new SDSGeneralAlgorithm(2, 10);
+
+        ArrayList<StringList> gps = convertGps(_goalParts);
+        ArrayList<StringList> reqsl = convertGps(required);
+
+        ElapsedTime.start();
+        ArrayList<SDSTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(gps, reqsl, _recommended, new HashStringTree());
+        ElapsedTime.stop();
+
+        SDSJointForest orgJbf = sds.convertTo2ab(orgGoalPartTrees);
+        GraphViewer orgJbfViewer = new GraphViewer(orgJbf);
+        orgJbfViewer.setBackground(new Color(211, 255, 206));
+//        LayoutScalingControl scalingPlugin = new LayoutScalingControl();
+//        orgJbfViewer.getVV().scaleToLayout(scalingPlugin);
+//        scalingPlugin.scale(orgJbfViewer.getVV(), .2f, new Point(0,0));
+        this.addGraph(this.GENERAL_SDS_TITLE, orgJbfViewer.getVV());
+
+        Statistics stat = new Statistics();
+        stat.setExecutionTime(ElapsedTime.getTime());
+        stat.setStages(orgJbf.getNode().getStages());
+        stat.setSteps(orgJbf.getNode().getSteps());
+        stat.setGoalParts(_goalParts.size());
+        _statistics.put(this.GENERAL_SDS_TITLE, stat);
+    }
+    
+    public void addGraph(String title, VisualizationViewer vv) {
+        GraphZoomScrollPane zoomPane = new GraphZoomScrollPane(vv);
+        this.tpCanvas.addTab(title, zoomPane);
+        this._vv = vv;
+    }
 }
