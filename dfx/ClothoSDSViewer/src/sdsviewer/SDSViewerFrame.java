@@ -22,6 +22,8 @@ import java.awt.Color;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.JDialog;
@@ -37,6 +39,7 @@ import newsds.datastructures.SDSBinaryTree;
 import newsds.datastructures.SDSJointBinaryForest;
 import newsds.datastructures.SDSJointForest;
 import newsds.datastructures.SDSTree;
+import org.clothocore.api.data.Part;
 import testability.FunctionallyTestableIntermediateFinder;
 import testability.IntermediateFinder;
 import viewers.BinaryGraphViewer;
@@ -632,9 +635,9 @@ public class SDSViewerFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 //generate/retrieve clotho composite part
-tpCanvas.removeAll();
+        tpCanvas.removeAll();
         runClothoSDS();
-        runGeneralSDS();
+        //runGeneralSDS();
 
         refreshCanvas();
 
@@ -713,6 +716,7 @@ tpCanvas.removeAll();
             }
         });
     }
+//fileName is the full path to a cpf file
 
     private void loadFile(String fileName) {
         // new Thread(new thread1()).start();
@@ -723,6 +727,7 @@ tpCanvas.removeAll();
             cpfReader = new CPFReader(fileName);
             _basicPartAttributes = cpfReader.getBasicPartAttributes();
         } catch (Exception ex) {
+            ex.printStackTrace();
             //Logger.getLogger(SDSViewerView.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -794,7 +799,7 @@ tpCanvas.removeAll();
         _rowData.clear();
 
         DefaultTableModel model = ((DefaultTableModel) tIntermediates.getModel());
-
+        //removes all rows in intermediates table
         while (model.getRowCount() > 0) {
             model.removeRow(0);
         }
@@ -951,28 +956,118 @@ tpCanvas.removeAll();
         this._vv = vv;
     }
 
+    private HashMap<String, PartAttributes> parseForBasicPartAttributes(org.clothocore.api.data.Part compositePart) throws Exception {
+        HashMap<String, PartAttributes> toReturn = new HashMap<String, PartAttributes>();
+        if (compositePart.getPartType().equals(Part.partType.Basic)) {
+            throw (new Exception("parseForBasicPartAttributes should only be invoked using a composite Clotho part"));
+        } else {
+            ArrayList<org.clothocore.api.data.Part> composition = compositePart.getCompositeParts();
+            for (int i = 0; i < composition.size(); i++) {
+                Part currentPart = composition.get(i);
+                if (currentPart.getPartType().equals(Part.partType.Basic)) {
+                    PartAttributes currentAttributes = new PartAttributes(currentPart.getShortDescription(), currentPart.getSeq().seqLength());
+                    toReturn.put(currentPart.getName(), currentAttributes);
+                } else {
+                    toReturn = parseForBasicPartAttributesHelper(currentPart, toReturn);
+                }
+            }
+        }
+        return toReturn;
+    }
+    //helper for recursion method to discover all basic parts
+
+    private HashMap<String, PartAttributes> parseForBasicPartAttributesHelper(org.clothocore.api.data.Part somePart, HashMap<String, PartAttributes> attributesHashMap) throws Exception {
+        HashMap<String, PartAttributes> toReturn = attributesHashMap;
+        Part compositePart = somePart;
+        if (compositePart.getPartType().equals(Part.partType.Basic)) {
+            throw (new Exception("parseForBasicPartAttributesHelper should only be invoked using a composite Clotho part"));
+        } else {
+            ArrayList<org.clothocore.api.data.Part> composition = compositePart.getCompositeParts();
+            for (int i = 0; i < composition.size(); i++) {
+                Part currentPart = composition.get(i);
+                if (currentPart.getPartType().equals(Part.partType.Basic)) {
+                    PartAttributes currentAttributes = new PartAttributes(currentPart.getShortDescription(), currentPart.getSeq().seqLength());
+                    attributesHashMap.put(currentPart.getName(), currentAttributes);
+                } else {
+                    attributesHashMap = parseForBasicPartAttributesHelper(currentPart, toReturn);
+                }
+            }
+
+            return toReturn;
+        }
+    }
+
     private void runClothoSDS() {
+        resetAll();
+        
+        
+        
+        //cpfreader///////////////////////////////////////////////////////////////
+        org.clothocore.api.data.Part targetPart = Part.retrieveByName("composite_final");
+        ArrayList<Part> composition = targetPart.getCompositeParts();
+        for (int i = 0; i < composition.size(); i++) {
+            System.out.println(composition.get(i).getName());
+        }
+        try {
+            _basicPartAttributes = parseForBasicPartAttributes(targetPart);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+        //loadFile()////////////////////////////////////////////////////////
+        String taContents = "#" + targetPart.getName() + "\n";
+        Iterator<String> names = _basicPartAttributes.keySet().iterator();
+        while (names.hasNext()) {
+            String current = names.next();
+            taContents = taContents + current + "," + _basicPartAttributes.get(current).getType() + "," + +_basicPartAttributes.get(current).getLength() + "\n";
+        }
+        taFileContents.setText(taContents);
+
+
+        //convertGps()///////////////////////////////////////////////////////////
+        StringList gp = new StringList();
+        Iterator<String> basicPartNames = _basicPartAttributes.keySet().iterator();
+        while (basicPartNames.hasNext()) {
+            String current = basicPartNames.next();
+            gp.add(current);
+        }
+        ArrayList<StringList> gps = new ArrayList<StringList>();
+        gps.add(gp);
+        
+        
+        //loadFile()
+        IntermediateFinder intFinder = new IntermediateFinder();
+        ArrayList<StringList> intermediates = intFinder.getCompositeParts(gps);
+        for (int ind = 0; ind < intermediates.size(); ind++) {
+        addIntermediate(intermediates.get(ind));
+        }
+        addRowsToTable();
+        
+    
+    
+        //runSDS()/////////////////////////////////////////////////////////////////
         SDSNewAlgorithm sds = new SDSNewAlgorithm();
-
-        ArrayList<StringList> gps = convertGps(_goalParts);
-
+        //ArrayList<StringList> gps = convertGps(_goalParts);
         ElapsedTime.start();
         ArrayList<SDSBinaryTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(gps, new ArrayList<StringList>(), new ArrayList<StringList>(), new HashStringBinaryTree());
         ElapsedTime.stop();
-
         SDSJointBinaryForest orgJbf = sds.convertTo2ab(orgGoalPartTrees);
         BinaryGraphViewer orgJbfViewer = new BinaryGraphViewer(orgJbf);
         orgJbfViewer.setBackground(new Color(206, 218, 255));
-//        LayoutScalingControl scalingPlugin = new LayoutScalingControl();
-//        orgJbfViewer.getVV().scaleToLayout(scalingPlugin);
-//        scalingPlugin.scale(orgJbfViewer.getVV(), .2f, new Point(0,0));
+        //        LayoutScalingControl scalingPlugin = new LayoutScalingControl();
+        //        orgJbfViewer.getVV().scaleToLayout(scalingPlugin);
+        //        scalingPlugin.scale(orgJbfViewer.getVV(), .2f, new Point(0,0));
         this.addGraph(this.SDS_TITLE, orgJbfViewer.getVV());
-
         Statistics stat = new Statistics();
         stat.setExecutionTime(ElapsedTime.getTime());
         stat.setStages(orgJbf.getNode().getStages());
         stat.setSteps(orgJbf.getNode().getSteps());
-        stat.setGoalParts(_goalParts.size());
+       //stat.setGoalParts(_goalParts.size());
+        stat.setGoalParts(gps.size());
         _statistics.put(this.SDS_TITLE, stat);
+
+
     }
 }

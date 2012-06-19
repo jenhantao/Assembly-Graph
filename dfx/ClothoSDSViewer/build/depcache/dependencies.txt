@@ -4,10 +4,9 @@ sdsviewer.SDSViewerFrame$14
 sdsviewer.SDSViewerFrame
 java.lang.Runnable
 ||:sdsviewer.SDSViewerFrame$13
-java.lang.Object
+java.awt.event.MouseAdapter
 sdsviewer.SDSViewerFrame$13
 sdsviewer.SDSViewerFrame
-java.lang.Runnable
 ||:sdsviewer.Statistics
 java.lang.Object
 java.text.DecimalFormat
@@ -15,9 +14,10 @@ java.lang.StringBuilder
 sdsviewer.Statistics
 java.lang.Integer
 ||:sdsviewer.SDSViewerFrame$12
-java.awt.event.MouseAdapter
+java.lang.Object
 sdsviewer.SDSViewerFrame$12
 sdsviewer.SDSViewerFrame
+java.awt.event.ActionListener
 ||:sdsviewer.SDSViewerFrame$11
 java.awt.event.MouseAdapter
 sdsviewer.SDSViewerFrame$11
@@ -164,6 +164,7 @@ java.lang.Integer
 java.lang.Exception
 ||:sdsviewer.SDSViewerFrame
 javax.swing.LayoutStyle$ComponentPlacement
+sdsviewer.SDSViewerFrame$14
 sdsviewer.SDSViewerFrame$13
 sdsviewer.Statistics
 sdsviewer.SDSViewerFrame$12
@@ -189,6 +190,7 @@ javax.swing.JTextField
 sdsviewer.SDSViewerFrame
 javax.swing.BorderFactory
 java.awt.Container
+org.clothocore.api.data.Part
 javax.swing.JFrame
 sdsviewer.SDSViewerFrame$9
 edu.uci.ics.jung.visualization.GraphZoomScrollPane
@@ -219,9 +221,11 @@ testability.IntermediateFinder
 newsds.datastructures.SDSJointBinaryForest
 newsds.algorithms.SDSNewAlgorithm
 javax.swing.UIManager$LookAndFeelInfo
+org.clothocore.api.data.Part$partType
 newsds.datastructures.SDSNode
 helper.HashStringTree
 accessibility.CPFReader
+org.clothocore.api.data.NucSeq
 javax.swing.JTabbedPane
 javax.swing.table.DefaultTableModel
 org.jdesktop.application.Application
@@ -229,7 +233,6 @@ newsds.datastructures.CompositePart
 javax.swing.Icon
 javax.swing.JScrollPane
 javax.swing.JSeparator
-javax.swing.JOptionPane
 accessibility.PartAttributes
 newsds.datastructures.BasicPart
 java.lang.ClassNotFoundException
@@ -253,6 +256,8 @@ java.awt.Color
 java.awt.event.ActionEvent
 java.util.Iterator
 newsds.datastructures.SDSJointForest
+java.io.PrintStream
+java.util.Set
 ||:helper.HashStringInteger
 helper.HashStringInteger
 java.util.HashMap
@@ -645,13 +650,6 @@ newsds.datastructures.SDSNode
 newsds.datastructures.SDSGraph
 newsds.datastructures.SDSBasicGraph
 java.lang.String
-||:testability.StructurallyTestableIntermediateFinder
-java.lang.Object
-java.util.ArrayList
-newsds.datastructures.CompositePart
-testability.StructurallyTestableIntermediateFinder
-java.lang.UnsupportedOperationException
-testability.Finder
 ||:newsds.datastructures.HashMotifs
 java.lang.String
 java.util.Iterator
@@ -660,3 +658,10 @@ java.lang.Double
 java.lang.StringBuilder
 java.util.Set
 java.util.HashMap
+||:testability.StructurallyTestableIntermediateFinder
+java.lang.Object
+java.util.ArrayList
+newsds.datastructures.CompositePart
+testability.StructurallyTestableIntermediateFinder
+java.lang.UnsupportedOperationException
+testability.Finder

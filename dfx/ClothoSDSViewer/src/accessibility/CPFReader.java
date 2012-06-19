@@ -21,7 +21,7 @@ public class CPFReader {
 
     ArrayList<CompositePart> _goalParts = new ArrayList<CompositePart>();
     ArrayList<String[]> _partList = new ArrayList<String[]>();
-    HashMap<String, PartAttributes> _basicParts = new HashMap<String, PartAttributes>();
+    HashMap<String, PartAttributes> _basicParts = new HashMap<String, PartAttributes>();//string is name of basic part, PartAttribute contains the details
     String _fileContents = "";
 
     public CPFReader(String fileName) throws Exception {
