@@ -11,6 +11,7 @@
 package sdsviewer;
 
 import accessibility.CPFReader;
+import accessibility.ClothoReader;
 import accessibility.PartAttributes;
 import edu.uci.ics.jung.visualization.GraphZoomScrollPane;
 import edu.uci.ics.jung.visualization.VisualizationViewer;
@@ -21,6 +22,7 @@ import helper.StringList;
 import java.awt.Color;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
@@ -39,6 +41,8 @@ import newsds.datastructures.SDSBinaryTree;
 import newsds.datastructures.SDSJointBinaryForest;
 import newsds.datastructures.SDSJointForest;
 import newsds.datastructures.SDSTree;
+import org.clothocore.api.core.Collector;
+import org.clothocore.api.data.ObjType;
 import org.clothocore.api.data.Part;
 import testability.FunctionallyTestableIntermediateFinder;
 import testability.IntermediateFinder;
@@ -59,6 +63,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
     private ArrayList<Object[]> _rowData = new ArrayList<Object[]>();
     private HashMap<String, StringList> _intermediates = new HashMap();
     private ArrayList<CompositePart> _goalParts;
+    private ArrayList<StringList> _gps;
     private ArrayList<StringList> _required;
     private ArrayList<StringList> _recommended;
     private HashMap<String, PartAttributes> _basicPartAttributes;
@@ -121,9 +126,12 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         tfPathToFiles = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btnLoad = new javax.swing.JToggleButton();
+        jButton1 = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         lFiles = new javax.swing.JList();
-        jButton1 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        compositePartList = new javax.swing.JList();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(SDSViewerFrame.class);
@@ -246,7 +254,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -276,14 +284,14 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tpCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+                .addComponent(tpCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tpCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
+                .addComponent(tpCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -406,16 +414,6 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane2.setName("jScrollPane2"); // NOI18N
-
-        lFiles.setName("lFiles"); // NOI18N
-        lFiles.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lFilesMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(lFiles);
-
         jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
         jButton1.setName("jButton1"); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -424,6 +422,34 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             }
         });
 
+        jTabbedPane1.setName("jTabbedPane1"); // NOI18N
+
+        jScrollPane2.setName("jScrollPane2"); // NOI18N
+
+        lFiles.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        lFiles.setName("lFiles"); // NOI18N
+        lFiles.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lFilesMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(lFiles);
+
+        jTabbedPane1.addTab(resourceMap.getString("jScrollPane2.TabConstraints.tabTitle"), jScrollPane2); // NOI18N
+
+        jScrollPane3.setName("jScrollPane3"); // NOI18N
+
+        compositePartList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        compositePartList.setName("compositePartList"); // NOI18N
+        compositePartList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                compositePartListMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(compositePartList);
+
+        jTabbedPane1.addTab(resourceMap.getString("jScrollPane3.TabConstraints.tabTitle"), jScrollPane3); // NOI18N
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -431,7 +457,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -458,8 +484,8 @@ public class SDSViewerFrame extends javax.swing.JFrame {
                             .addComponent(lblStIntermediates)
                             .addComponent(lblFtIntermediates)
                             .addComponent(lblExecutionTime))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -468,7 +494,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(lblStats)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 316, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(tfPathToFiles, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -490,7 +516,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
@@ -525,7 +551,10 @@ public class SDSViewerFrame extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jTabbedPane1)
+                                .addContainerGap())
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jButton2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -533,9 +562,8 @@ public class SDSViewerFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
+                                .addComponent(jButton1)
+                                .addGap(20, 20, 20))))))
         );
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
@@ -566,7 +594,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1241, Short.MAX_VALUE)
+            .addGap(0, 1245, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -575,7 +603,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 785, Short.MAX_VALUE)
+            .addGap(0, 864, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -626,8 +654,33 @@ public class SDSViewerFrame extends javax.swing.JFrame {
 
     }
         private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
-
+            /*
         DefaultListModel listModel = new DefaultListModel();         File folder = new File(tfPathToFiles.getText());         for (final File fileEntry : folder.listFiles()) {             String[] split = fileEntry.getAbsolutePath().split("\\.");             if (split[split.length - 1].equals("cpf")) {                 listModel.addElement(fileEntry.getName());             }         }         lFiles = new JList(listModel);         jScrollPane2.setViewportView(lFiles);         lFiles.addMouseListener(new java.awt.event.MouseAdapter() {              public void mouseClicked(java.awt.event.MouseEvent evt) {                 lFilesMouseClicked(evt);             }         });     }//GEN-LAST:event_btnLoadActionPerformed
+        private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {
+         */
+        /*loads cpf file list*************************************/
+        DefaultListModel cpfListModel = new DefaultListModel();
+        File folder = new File(tfPathToFiles.getText());
+        for (final File fileEntry : folder.listFiles()) {
+            String[] split = fileEntry.getAbsolutePath().split("\\.");
+            if (split[split.length - 1].equals("cpf")) {
+                cpfListModel.addElement(fileEntry.getName());
+            }
+        }
+        lFiles.setModel(cpfListModel);
+
+
+        /*************************************************/
+        DefaultListModel clothoListModel = new DefaultListModel();
+        ArrayList<Part> allParts = Collector.getAll(ObjType.PART);
+        for (Part somePart : allParts) {
+            if (somePart.getPartType().equals(Part.partType.Composite)) {
+                clothoListModel.addElement(somePart.getName());
+            }
+        }
+        compositePartList.setModel(clothoListModel);
+
+    }
 
     private void lFilesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lFilesMouseClicked
 
@@ -642,6 +695,40 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         refreshCanvas();
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void compositePartListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_compositePartListMouseClicked
+        int index = compositePartList.getSelectedIndex();
+        if (index > -1) {
+            resetAll();
+            Part targetPart = Part.retrieveByName((String) compositePartList.getSelectedValue().toString());
+            ArrayList<Part> composition = new ArrayList<Part>();
+            try {
+                composition = ClothoReader.getComposition(targetPart);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            _basicPartAttributes = ClothoReader.getPartAttributes(composition);
+            String taContents = "#" + targetPart.getName() + "\n";
+            for (int i = 0; i < composition.size(); i++) {
+                String current = composition.get(i).getName();
+                taContents = taContents + current + "," + _basicPartAttributes.get(current).getType() + "," + +_basicPartAttributes.get(current).getLength() + "\n";
+            }
+            taFileContents.setText(taContents);
+            StringList gp = new StringList(); //order of parts in gp determines order of parts in construct
+            for (int i = 0; i < composition.size(); i++) {
+                String current = composition.get(i).getName();
+                gp.add(current);
+            }
+            _gps = new ArrayList<StringList>();
+            _gps.add(gp);
+            IntermediateFinder intFinder = new IntermediateFinder();
+            ArrayList<StringList> intermediates = intFinder.getCompositeParts(_gps);
+            for (int ind = 0; ind < intermediates.size(); ind++) {
+                addIntermediate(intermediates.get(ind));
+            }
+            addRowsToTable();
+        }
+    }//GEN-LAST:event_compositePartListMouseClicked
 
     private String getPath() {
         int firstSelIx = lFiles.getSelectedIndex();
@@ -734,9 +821,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         taFileContents.setText(cpfReader.getFileContents());
 
         _goalParts = cpfReader.getGoalParts();
-
-
-
+        _gps = convertGps(_goalParts);
         IntermediateFinder intFinder = new IntermediateFinder();
         ArrayList<StringList> intermediates = intFinder.getCompositeParts(convertGps(_goalParts));
 
@@ -809,6 +894,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExportImage;
     private javax.swing.JToggleButton btnLoad;
+    private javax.swing.JList compositePartList;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -830,7 +916,9 @@ public class SDSViewerFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JList lFiles;
     private java.awt.Label label2;
     private java.awt.Label label3;
@@ -874,10 +962,9 @@ public class SDSViewerFrame extends javax.swing.JFrame {
     private void runSDS() {
         SDSNewAlgorithm sds = new SDSNewAlgorithm();
 
-        ArrayList<StringList> gps = convertGps(_goalParts);
 
         ElapsedTime.start();
-        ArrayList<SDSBinaryTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(gps, new ArrayList<StringList>(), new ArrayList<StringList>(), new HashStringBinaryTree());
+        ArrayList<SDSBinaryTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(_gps, new ArrayList<StringList>(), new ArrayList<StringList>(), new HashStringBinaryTree());
         ElapsedTime.stop();
 
         SDSJointBinaryForest orgJbf = sds.convertTo2ab(orgGoalPartTrees);
@@ -898,11 +985,8 @@ public class SDSViewerFrame extends javax.swing.JFrame {
 
     private void runNewSDS() {
         SDSNewAlgorithm sds = new SDSNewAlgorithm();
-
-        ArrayList<StringList> gps = convertGps(_goalParts);
-
         ElapsedTime.start();
-        ArrayList<SDSBinaryTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(gps, _required, _recommended, new HashStringBinaryTree());
+        ArrayList<SDSBinaryTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(_gps, _required, _recommended, new HashStringBinaryTree());
         ElapsedTime.stop();
 
         SDSJointBinaryForest orgJbf = sds.convertTo2ab(orgGoalPartTrees);
@@ -927,11 +1011,10 @@ public class SDSViewerFrame extends javax.swing.JFrame {
 
         SDSGeneralAlgorithm sds = new SDSGeneralAlgorithm(2, 10);
 
-        ArrayList<StringList> gps = convertGps(_goalParts);
         ArrayList<StringList> reqsl = convertGps(required);
 
         ElapsedTime.start();
-        ArrayList<SDSTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(gps, reqsl, _recommended, new HashStringTree());
+        ArrayList<SDSTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(_gps, reqsl, _recommended, new HashStringTree());
         ElapsedTime.stop();
 
         SDSJointForest orgJbf = sds.convertTo2ab(orgGoalPartTrees);
@@ -956,102 +1039,13 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         this._vv = vv;
     }
 
-    private HashMap<String, PartAttributes> parseForBasicPartAttributes(org.clothocore.api.data.Part compositePart) throws Exception {
-        HashMap<String, PartAttributes> toReturn = new HashMap<String, PartAttributes>();
-        if (compositePart.getPartType().equals(Part.partType.Basic)) {
-            throw (new Exception("parseForBasicPartAttributes should only be invoked using a composite Clotho part"));
-        } else {
-            ArrayList<org.clothocore.api.data.Part> composition = compositePart.getCompositeParts();
-            for (int i = 0; i < composition.size(); i++) {
-                Part currentPart = composition.get(i);
-                if (currentPart.getPartType().equals(Part.partType.Basic)) {
-                    PartAttributes currentAttributes = new PartAttributes(currentPart.getShortDescription(), currentPart.getSeq().seqLength());
-                    toReturn.put(currentPart.getName(), currentAttributes);
-                } else {
-                    toReturn = parseForBasicPartAttributesHelper(currentPart, toReturn);
-                }
-            }
-        }
-        return toReturn;
-    }
-    //helper for recursion method to discover all basic parts
-
-    private HashMap<String, PartAttributes> parseForBasicPartAttributesHelper(org.clothocore.api.data.Part somePart, HashMap<String, PartAttributes> attributesHashMap) throws Exception {
-        HashMap<String, PartAttributes> toReturn = attributesHashMap;
-        Part compositePart = somePart;
-        if (compositePart.getPartType().equals(Part.partType.Basic)) {
-            throw (new Exception("parseForBasicPartAttributesHelper should only be invoked using a composite Clotho part"));
-        } else {
-            ArrayList<org.clothocore.api.data.Part> composition = compositePart.getCompositeParts();
-            for (int i = 0; i < composition.size(); i++) {
-                Part currentPart = composition.get(i);
-                if (currentPart.getPartType().equals(Part.partType.Basic)) {
-                    PartAttributes currentAttributes = new PartAttributes(currentPart.getShortDescription(), currentPart.getSeq().seqLength());
-                    attributesHashMap.put(currentPart.getName(), currentAttributes);
-                } else {
-                    attributesHashMap = parseForBasicPartAttributesHelper(currentPart, toReturn);
-                }
-            }
-
-            return toReturn;
-        }
-    }
-
     private void runClothoSDS() {
         resetAll();
-        
-        
-        
-        //cpfreader///////////////////////////////////////////////////////////////
-        org.clothocore.api.data.Part targetPart = Part.retrieveByName("composite_final");
-        ArrayList<Part> composition = targetPart.getCompositeParts();
-        for (int i = 0; i < composition.size(); i++) {
-            System.out.println(composition.get(i).getName());
-        }
-        try {
-            _basicPartAttributes = parseForBasicPartAttributes(targetPart);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-
-        //loadFile()////////////////////////////////////////////////////////
-        String taContents = "#" + targetPart.getName() + "\n";
-        Iterator<String> names = _basicPartAttributes.keySet().iterator();
-        while (names.hasNext()) {
-            String current = names.next();
-            taContents = taContents + current + "," + _basicPartAttributes.get(current).getType() + "," + +_basicPartAttributes.get(current).getLength() + "\n";
-        }
-        taFileContents.setText(taContents);
-
-
-        //convertGps()///////////////////////////////////////////////////////////
-        StringList gp = new StringList();
-        Iterator<String> basicPartNames = _basicPartAttributes.keySet().iterator();
-        while (basicPartNames.hasNext()) {
-            String current = basicPartNames.next();
-            gp.add(current);
-        }
-        ArrayList<StringList> gps = new ArrayList<StringList>();
-        gps.add(gp);
-        
-        
-        //loadFile()
-        IntermediateFinder intFinder = new IntermediateFinder();
-        ArrayList<StringList> intermediates = intFinder.getCompositeParts(gps);
-        for (int ind = 0; ind < intermediates.size(); ind++) {
-        addIntermediate(intermediates.get(ind));
-        }
-        addRowsToTable();
-        
-    
-    
         //runSDS()/////////////////////////////////////////////////////////////////
         SDSNewAlgorithm sds = new SDSNewAlgorithm();
         //ArrayList<StringList> gps = convertGps(_goalParts);
         ElapsedTime.start();
-        ArrayList<SDSBinaryTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(gps, new ArrayList<StringList>(), new ArrayList<StringList>(), new HashStringBinaryTree());
+        ArrayList<SDSBinaryTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(_gps, new ArrayList<StringList>(), new ArrayList<StringList>(), new HashStringBinaryTree());
         ElapsedTime.stop();
         SDSJointBinaryForest orgJbf = sds.convertTo2ab(orgGoalPartTrees);
         BinaryGraphViewer orgJbfViewer = new BinaryGraphViewer(orgJbf);
@@ -1064,8 +1058,8 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         stat.setExecutionTime(ElapsedTime.getTime());
         stat.setStages(orgJbf.getNode().getStages());
         stat.setSteps(orgJbf.getNode().getSteps());
-       //stat.setGoalParts(_goalParts.size());
-        stat.setGoalParts(gps.size());
+        //stat.setGoalParts(_goalParts.size());
+        stat.setGoalParts(_gps.size());
         _statistics.put(this.SDS_TITLE, stat);
 
 
