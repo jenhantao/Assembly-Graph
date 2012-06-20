@@ -138,12 +138,5 @@ public class SDSJointForest extends SDSBasicGraph {
         }
     }
 }
-//class TreeList extends ArrayList<Tree> {
-//    public void contains(Tree tree) {
-//        for (int index = 0; index < this.size(); index++) {
-//            if (tree.getPart().equals(tree))
-//        }
-//        return false;
-//    }
-//}
+
 

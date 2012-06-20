@@ -13,6 +13,7 @@ package sdsviewer;
 import accessibility.CPFReader;
 import accessibility.ClothoReader;
 import accessibility.PartAttributes;
+import edu.uci.ics.jung.graph.Graph;
 import edu.uci.ics.jung.visualization.GraphZoomScrollPane;
 import edu.uci.ics.jung.visualization.VisualizationViewer;
 import helper.ElapsedTime;
@@ -22,6 +23,7 @@ import helper.StringList;
 import java.awt.Color;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -72,6 +74,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
     private final String NEW_SDS_TITLE = "New SDS";
     private final String SDS_TITLE = "Original SDS";
     private final String GENERAL_SDS_TITLE = "General SDS";
+    private ArrayList<Graph> _assemblyGraphs = new ArrayList<Graph>();
 
     /** Creates new form SDSViewerFrame */
     public SDSViewerFrame() {
@@ -126,12 +129,14 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         tfPathToFiles = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btnLoad = new javax.swing.JToggleButton();
-        jButton1 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         lFiles = new javax.swing.JList();
         jScrollPane3 = new javax.swing.JScrollPane();
         compositePartList = new javax.swing.JList();
+        algorithmSelector = new javax.swing.JComboBox();
+        jLabel8 = new javax.swing.JLabel();
+        saveButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(SDSViewerFrame.class);
@@ -254,7 +259,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -284,7 +289,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tpCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
+                .addComponent(tpCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -374,7 +379,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setLabel(resourceMap.getString("jButton2.label")); // NOI18N
+        jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
         jButton2.setName("jButton2"); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -414,19 +419,10 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
-        jButton1.setName("jButton1"); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         jTabbedPane1.setName("jTabbedPane1"); // NOI18N
 
         jScrollPane2.setName("jScrollPane2"); // NOI18N
 
-        lFiles.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         lFiles.setName("lFiles"); // NOI18N
         lFiles.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -439,7 +435,6 @@ public class SDSViewerFrame extends javax.swing.JFrame {
 
         jScrollPane3.setName("jScrollPane3"); // NOI18N
 
-        compositePartList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         compositePartList.setName("compositePartList"); // NOI18N
         compositePartList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -450,6 +445,20 @@ public class SDSViewerFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab(resourceMap.getString("jScrollPane3.TabConstraints.tabTitle"), jScrollPane3); // NOI18N
 
+        algorithmSelector.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SDS", "New SDS", "General SDS", "MoClo" }));
+        algorithmSelector.setName("algorithmSelector"); // NOI18N
+
+        jLabel8.setText(resourceMap.getString("jLabel8.text")); // NOI18N
+        jLabel8.setName("jLabel8"); // NOI18N
+
+        saveButton.setText(resourceMap.getString("saveButton.text")); // NOI18N
+        saveButton.setName("saveButton"); // NOI18N
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -457,7 +466,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -484,17 +493,19 @@ public class SDSViewerFrame extends javax.swing.JFrame {
                             .addComponent(lblStIntermediates)
                             .addComponent(lblFtIntermediates)
                             .addComponent(lblExecutionTime))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(algorithmSelector, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                             .addComponent(btnExportImage, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
+                            .addComponent(jLabel8)
+                            .addComponent(saveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(lblStats)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 316, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 321, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(tfPathToFiles, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -516,7 +527,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
@@ -551,19 +562,22 @@ public class SDSViewerFrame extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTabbedPane1)
-                                .addContainerGap())
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(algorithmSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnExportImage)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(saveButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)
-                                .addGap(20, 20, 20))))))
+                                .addGap(5, 5, 5))
+                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
@@ -594,7 +608,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1245, Short.MAX_VALUE)
+            .addGap(0, 1250, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -603,7 +617,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 864, Short.MAX_VALUE)
+            .addGap(0, 867, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -643,14 +657,45 @@ public class SDSViewerFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //new Thread(new thread1()).start();         tpCanvas.removeAll();          findReqRecIntermediates();         runSDS();         runNewSDS();         runGeneralSDS();          refreshCanvas();     }//GEN-LAST:event_jButton2ActionPerformed
+        if (compositePartList.getSelectedIndex() < 0 && lFiles.getSelectedIndex() < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a device to construct");
+            return;
+        }
+
+        //tpCanvas.removeAll();
+        String selected = (String) algorithmSelector.getSelectedItem();
+        if (selected.equals("SDS")) {
+            findReqRecIntermediates();
+            runSDS();
+
+        } else if (selected.equals("New SDS")) {
+            findReqRecIntermediates();
+            runNewSDS();
+
+        } else if (selected.equals("General SDS")) {
+            findReqRecIntermediates();
+            runGeneralSDS();
+
+        } else if (selected.equals("MoClo")) {
+            findReqRecIntermediates();
+            runMoClo();
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select an algorithm to run");
+
+        }
+
+        refreshCanvas();
+
+        /*
         tpCanvas.removeAll();
+        
         findReqRecIntermediates();
         runSDS();
         runNewSDS();
         runGeneralSDS();
-
+        
         refreshCanvas();
-
+         */
 
     }
         private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
@@ -686,16 +731,6 @@ public class SDSViewerFrame extends javax.swing.JFrame {
 
         int firstSelIx = lFiles.getSelectedIndex();         if (firstSelIx > -1) {             loadFile(getPath());         }     }//GEN-LAST:event_lFilesMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//generate/retrieve clotho composite part
-        tpCanvas.removeAll();
-        runClothoSDS();
-        //runGeneralSDS();
-
-        refreshCanvas();
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void compositePartListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_compositePartListMouseClicked
         int index = compositePartList.getSelectedIndex();
         if (index > -1) {
@@ -729,6 +764,21 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             addRowsToTable();
         }
     }//GEN-LAST:event_compositePartListMouseClicked
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        int index = tpCanvas.getSelectedIndex();
+        if(index>-1) {
+            Graph current = _assemblyGraphs.get(index);
+            Collection edges = current.getEdges();
+            Iterator iterator = edges.iterator();
+            while(iterator.hasNext()) {
+                System.out.println(iterator.next().toString());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please run an algorith first. Do not clear the tabs afterwards.");
+            return;
+        }
+    }//GEN-LAST:event_saveButtonActionPerformed
 
     private String getPath() {
         int firstSelIx = lFiles.getSelectedIndex();
@@ -892,10 +942,10 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         tIntermediates.setModel(model);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox algorithmSelector;
     private javax.swing.JButton btnExportImage;
     private javax.swing.JToggleButton btnLoad;
     private javax.swing.JList compositePartList;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton6;
@@ -911,6 +961,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -932,6 +983,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblStats;
     private javax.swing.JLabel lblSteps;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JButton saveButton;
     private javax.swing.JTable tIntermediates;
     private java.awt.TextArea taFileContents;
     private javax.swing.JTextField tfPathToFiles;
@@ -969,6 +1021,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
 
         SDSJointBinaryForest orgJbf = sds.convertTo2ab(orgGoalPartTrees);
         BinaryGraphViewer orgJbfViewer = new BinaryGraphViewer(orgJbf);
+        _assemblyGraphs.add(orgJbfViewer.getGraph()); //remember to store the graphs each time
         orgJbfViewer.setBackground(new Color(206, 218, 255));
 //        LayoutScalingControl scalingPlugin = new LayoutScalingControl();
 //        orgJbfViewer.getVV().scaleToLayout(scalingPlugin);
@@ -991,6 +1044,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
 
         SDSJointBinaryForest orgJbf = sds.convertTo2ab(orgGoalPartTrees);
         BinaryGraphViewer orgJbfViewer = new BinaryGraphViewer(orgJbf);
+        _assemblyGraphs.add(orgJbfViewer.getGraph()); //remember to store the graphs each time
         orgJbfViewer.setBackground(new Color(211, 255, 206));
 //        LayoutScalingControl scalingPlugin = new LayoutScalingControl();
 //        orgJbfViewer.getVV().scaleToLayout(scalingPlugin);
@@ -1019,6 +1073,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
 
         SDSJointForest orgJbf = sds.convertTo2ab(orgGoalPartTrees);
         GraphViewer orgJbfViewer = new GraphViewer(orgJbf);
+        _assemblyGraphs.add(orgJbfViewer.getGraph()); //remember to store the graphs each time
         orgJbfViewer.setBackground(new Color(211, 255, 206));
 //        LayoutScalingControl scalingPlugin = new LayoutScalingControl();
 //        orgJbfViewer.getVV().scaleToLayout(scalingPlugin);
@@ -1039,29 +1094,9 @@ public class SDSViewerFrame extends javax.swing.JFrame {
         this._vv = vv;
     }
 
-    private void runClothoSDS() {
-        resetAll();
-        //runSDS()/////////////////////////////////////////////////////////////////
-        SDSNewAlgorithm sds = new SDSNewAlgorithm();
-        //ArrayList<StringList> gps = convertGps(_goalParts);
-        ElapsedTime.start();
-        ArrayList<SDSBinaryTree> orgGoalPartTrees = sds.createAsmTreeMultipleGoalParts(_gps, new ArrayList<StringList>(), new ArrayList<StringList>(), new HashStringBinaryTree());
-        ElapsedTime.stop();
-        SDSJointBinaryForest orgJbf = sds.convertTo2ab(orgGoalPartTrees);
-        BinaryGraphViewer orgJbfViewer = new BinaryGraphViewer(orgJbf);
-        orgJbfViewer.setBackground(new Color(206, 218, 255));
-        //        LayoutScalingControl scalingPlugin = new LayoutScalingControl();
-        //        orgJbfViewer.getVV().scaleToLayout(scalingPlugin);
-        //        scalingPlugin.scale(orgJbfViewer.getVV(), .2f, new Point(0,0));
-        this.addGraph(this.SDS_TITLE, orgJbfViewer.getVV());
-        Statistics stat = new Statistics();
-        stat.setExecutionTime(ElapsedTime.getTime());
-        stat.setStages(orgJbf.getNode().getStages());
-        stat.setSteps(orgJbf.getNode().getSteps());
-        //stat.setGoalParts(_goalParts.size());
-        stat.setGoalParts(_gps.size());
-        _statistics.put(this.SDS_TITLE, stat);
+    private void runMoClo() {
+//      _assemblyGraphs.add(orgJbfViewer.getGraph()); //remember to store the graphs each time
 
-
+        throw new UnsupportedOperationException("Not yet implemented");
     }
 }

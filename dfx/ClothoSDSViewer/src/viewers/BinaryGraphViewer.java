@@ -85,17 +85,21 @@ public class BinaryGraphViewer {
             this.graph.addVertex(t.getNode().getPart().toString());
         }
         if (t.getRight() != null) {
-            this.graph.addEdge(this.edgeFactory.create(), 
+            this.graph.addEdge(this.edgeFactory.create(),
                     t.getNode().getPart().toString(),
                     t.getRight().getNode().getPart().toString());
         }
 
         if (t.getLeft() != null) {
-            this.graph.addEdge(this.edgeFactory.create(), 
+            this.graph.addEdge(this.edgeFactory.create(),
                     t.getNode().getPart().toString(),
                     t.getLeft().getNode().getPart().toString());
         }
         createGraph(t.getLeft());
         createGraph(t.getRight());
+    }
+
+    public Graph getGraph() {
+        return graph;
     }
 }

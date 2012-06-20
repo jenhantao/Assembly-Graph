@@ -61,7 +61,9 @@ public class GraphViewer {
         this.vv.getRenderContext().setVertexLabelTransformer(new ToStringLabeller());
 
     }
-
+    public Graph getGraph() {
+        return graph;
+    }
     public void setBackground(Color color) {
         this.vv.setBackground(color);
     }
