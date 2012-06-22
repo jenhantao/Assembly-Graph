@@ -21,7 +21,8 @@ public class SDSBinaryTree extends SDSBasicGraph {
     private SDSBinaryTree _parent;
     private ArrayList<SDSBinaryTree> _subtrees;
     private ArrayList<SDSBinaryTree> _instances;
-    
+    private ArrayList<SDSBinaryTree> _stack = new ArrayList<SDSBinaryTree>();
+
     public SDSBinaryTree() {
         super();
         _leftChild = null;
@@ -61,7 +62,42 @@ public class SDSBinaryTree extends SDSBasicGraph {
 //            _rightChild.substituteNode(nodeName, tree);
 //        }
 //    }
+    //returns a list of edges
+    public ArrayList<String> getEdgeList() {
+        ArrayList<String> toReturn = new ArrayList();
+        _stack = new ArrayList<SDSBinaryTree>();
+        if (!this._leftChild.equals(null)) {
+            _stack.add(this._leftChild);
+            toReturn.add(this.getNode().getPart().toString() + "--" + this._leftChild.getNode().getPart().toString());
+        }
+        if (!this._rightChild.equals(null)) {
+            _stack.add(this._rightChild);
+            toReturn.add(this.getNode().getPart().toString() + "--" + this._rightChild.getNode().getPart().toString());
 
+        }
+        SDSBinaryTree next = _stack.get(0);
+        _stack.remove(0);
+        toReturn = getEdgeListHelper(next,toReturn);
+        return toReturn;
+    }
+
+    
+    private ArrayList<String> getEdgeListHelper(SDSBinaryTree current, ArrayList<String> toReturn) {
+        if (!current._leftChild.equals(null)) {
+            _stack.add(current._leftChild);
+            toReturn.add(current.getNode().getPart().toString() + "--" + current._leftChild.getNode().getPart().toString());
+        }
+        if (!current._rightChild.equals(null)) {
+            _stack.add(current._rightChild);
+            toReturn.add(current.getNode().getPart().toString() + "--" + current._rightChild.getNode().getPart().toString());
+
+        }
+        SDSBinaryTree next = _stack.get(0);
+        _stack.remove(0);
+        toReturn = getEdgeListHelper(next,toReturn);
+        return toReturn;
+    
+    }
     public void resetColorRec(SDSBinaryTree tree) {
         if (tree == null) {
             return;
@@ -156,7 +192,9 @@ public class SDSBinaryTree extends SDSBasicGraph {
     }
 
     public ArrayList<SDSBinaryTree> getSubtrees() {
-        if (_subtrees != null) return _subtrees;
+        if (_subtrees != null) {
+            return _subtrees;
+        }
         _subtrees = new ArrayList<SDSBinaryTree>();
         subtreesRec(this);
         Collections.sort(_subtrees, new Comparator<SDSBinaryTree>() {
@@ -203,4 +241,6 @@ public class SDSBinaryTree extends SDSBasicGraph {
             _rightChild = null;
         }
     }
+
+    
 }
