@@ -66,11 +66,11 @@ public class SDSBinaryTree extends SDSBasicGraph {
     public ArrayList<String> getEdgeList() {
         ArrayList<String> toReturn = new ArrayList();
         _stack = new ArrayList<SDSBinaryTree>();
-        if (!this._leftChild.equals(null)) {
+        if (this._leftChild!=null) {
             _stack.add(this._leftChild);
             toReturn.add(this.getNode().getPart().toString() + "--" + this._leftChild.getNode().getPart().toString());
         }
-        if (!this._rightChild.equals(null)) {
+        if (this._rightChild!=null) {
             _stack.add(this._rightChild);
             toReturn.add(this.getNode().getPart().toString() + "--" + this._rightChild.getNode().getPart().toString());
 
@@ -83,11 +83,11 @@ public class SDSBinaryTree extends SDSBasicGraph {
 
     
     private ArrayList<String> getEdgeListHelper(SDSBinaryTree current, ArrayList<String> toReturn) {
-        if (!current._leftChild.equals(null)) {
+        if (this._leftChild!=null) {
             _stack.add(current._leftChild);
             toReturn.add(current.getNode().getPart().toString() + "--" + current._leftChild.getNode().getPart().toString());
         }
-        if (!current._rightChild.equals(null)) {
+        if (this._rightChild!=null) {
             _stack.add(current._rightChild);
             toReturn.add(current.getNode().getPart().toString() + "--" + current._rightChild.getNode().getPart().toString());
 

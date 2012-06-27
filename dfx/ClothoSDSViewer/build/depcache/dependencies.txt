@@ -262,6 +262,7 @@ javax.swing.GroupLayout$Alignment
 java.awt.Label
 org.jdesktop.application.ResourceMap
 java.awt.EventQueue
+[I
 javax.swing.JLabel
 javax.swing.GroupLayout$SequentialGroup
 java.lang.String
@@ -377,14 +378,14 @@ java.lang.Object
 sdsviewer.SDSViewerFrame
 sdsviewer.SDSViewerFrame$7
 java.awt.event.ActionListener
-||:testability.Finder
-java.lang.Object
-testability.Finder
 ||:sdsviewer.SDSViewerFrame$6
 java.lang.Object
 sdsviewer.SDSViewerFrame
 sdsviewer.SDSViewerFrame$6
 javax.swing.event.ChangeListener
+||:testability.Finder
+java.lang.Object
+testability.Finder
 ||:sdsviewer.SDSViewerFrame$5
 java.lang.Object
 sdsviewer.SDSViewerFrame
