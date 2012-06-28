@@ -8,6 +8,7 @@ import helper.StringList;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import org.clothocore.api.data.Part;
 
 /**
  *
@@ -66,38 +67,42 @@ public class SDSBinaryTree extends SDSBasicGraph {
     public ArrayList<String> getEdgeList() {
         ArrayList<String> toReturn = new ArrayList();
         _stack = new ArrayList<SDSBinaryTree>();
-        if (this._leftChild!=null) {
+        //System.out.println(this._node.getPart().toString());
+        if (this._leftChild != null) {
             _stack.add(this._leftChild);
-            toReturn.add(this.getNode().getPart().toString() + "--" + this._leftChild.getNode().getPart().toString());
+            toReturn.add(Part.retrieveByExactName(this.getNode().getPart().toString()).getUUID() + "=>" + Part.retrieveByExactName(this._leftChild.getNode().getPart().toString()).getUUID());
         }
-        if (this._rightChild!=null) {
+        if (this._rightChild != null) {
             _stack.add(this._rightChild);
-            toReturn.add(this.getNode().getPart().toString() + "--" + this._rightChild.getNode().getPart().toString());
+            toReturn.add(Part.retrieveByExactName(this.getNode().getPart().toString()).getUUID() + "=>" + Part.retrieveByExactName(this._rightChild.getNode().getPart().toString()).getUUID());
 
         }
         SDSBinaryTree next = _stack.get(0);
         _stack.remove(0);
-        toReturn = getEdgeListHelper(next,toReturn);
+        toReturn = getEdgeListHelper(next, toReturn);
         return toReturn;
     }
 
-    
     private ArrayList<String> getEdgeListHelper(SDSBinaryTree current, ArrayList<String> toReturn) {
-        if (this._leftChild!=null) {
+        //System.out.println(current._node.getPart().toString());
+        if (current._leftChild != null) {
             _stack.add(current._leftChild);
-            toReturn.add(current.getNode().getPart().toString() + "--" + current._leftChild.getNode().getPart().toString());
+            toReturn.add(Part.retrieveByExactName(current.getNode().getPart().toString()).getUUID() + "=>" + Part.retrieveByExactName(current._leftChild.getNode().getPart().toString()).getUUID());
         }
-        if (this._rightChild!=null) {
+        if (current._rightChild != null) {
             _stack.add(current._rightChild);
-            toReturn.add(current.getNode().getPart().toString() + "--" + current._rightChild.getNode().getPart().toString());
+            toReturn.add(Part.retrieveByExactName(current.getNode().getPart().toString()).getUUID() + "=>" + Part.retrieveByExactName(current._rightChild.getNode().getPart().toString()).getUUID());
 
         }
-        SDSBinaryTree next = _stack.get(0);
-        _stack.remove(0);
-        toReturn = getEdgeListHelper(next,toReturn);
+        if (!_stack.isEmpty()) {
+            SDSBinaryTree next = _stack.get(0);
+            _stack.remove(0);
+            toReturn = getEdgeListHelper(next, toReturn);
+        }
         return toReturn;
-    
+
     }
+
     public void resetColorRec(SDSBinaryTree tree) {
         if (tree == null) {
             return;
@@ -241,6 +246,4 @@ public class SDSBinaryTree extends SDSBasicGraph {
             _rightChild = null;
         }
     }
-
-    
 }

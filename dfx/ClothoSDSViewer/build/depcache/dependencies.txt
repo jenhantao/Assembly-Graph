@@ -506,6 +506,7 @@ java.lang.StringBuilder
 newsds.datastructures.Debug
 java.util.Collections
 java.util.ArrayList
+org.clothocore.api.data.Part
 newsds.datastructures.SDSBinaryTree$1
 newsds.datastructures.SDSBinaryTree
 newsds.datastructures.SDSNode

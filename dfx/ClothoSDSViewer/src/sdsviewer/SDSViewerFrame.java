@@ -773,10 +773,10 @@ public class SDSViewerFrame extends javax.swing.JFrame {
             if (treeList.get(0).getClass().equals(newsds.datastructures.SDSTree.class)) {
                 for (int i = 0; i < treeList.size(); i++) {
                     SDSTree current = (SDSTree) treeList.get(i);
-                    while (!current.getParent().equals(null)) {
+                    while (current.getParent()!=(null)) {
                         current = current.getParent();
                     }
-                    System.out.println(current.getNode().getPart().get(0));
+                   // System.out.println(current.getNode().getPart().get(0));
                 }
             } else if (treeList.get(0).getClass().equals(newsds.datastructures.SDSBinaryTree.class)) {
                 for (int i = 0; i < treeList.size(); i++) {
@@ -789,7 +789,7 @@ public class SDSViewerFrame extends javax.swing.JFrame {
                 }
             } else {
             }
-            System.out.println(treeList.get(0).getClass());
+            //System.out.println(treeList.get(0).getClass());
         } else {
             JOptionPane.showMessageDialog(null, "Please run an algorith first. Do not clear the tabs afterwards.");
             return;
